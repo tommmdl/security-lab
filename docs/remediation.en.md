@@ -32,3 +32,17 @@ We run the 23 API/Compose integration checks on a separate project and volume, i
 Reproduce collection without filtering: `python3 scripts/scan.py notes-api` and `python3 scripts/scan.py postgres`. Exit 1 means the unchanged gate blocked remaining findings. The full JSON and SARIF reports are uploaded by Actions even when it fails. Counts may change when the vulnerability database changes.
 
 Sources: [upstream PostgreSQL Dockerfile](https://github.com/docker-library/postgres/blob/master/17/bookworm/Dockerfile), [gosu source](https://github.com/tianon/gosu/tree/6456aaa0f3c854d199d0f037f068eb97515b7513), [Go releases](https://go.dev/dl/).
+
+## The API running with tracing
+
+The local instrumented variant was also rebuilt from the published corrected API digest. OpenTelemetry dependencies are installed in a separate build stage; pip and ensurepip stay out of the final image. Its full `traced-api-before.json` and `traced-api-after.json` reports show the same reduction from 173 to 164 findings and zero remaining findings with a published fix in this snapshot. This additional local scan does not add a third image to the remote CI matrix.
+
+## Running environments and validation
+
+The published digests were rescanned directly from GHCR and reproduced the local counts. [Actions](https://github.com/tommmdl/security-lab/actions/runs/39174255658) passed all 15 policy/configuration checks and correctly blocked both images. [Publication](https://github.com/tommmdl/github-actions-lab/actions/runs/39174023844) passed the 23 integration checks. The corrected basic Kubernetes setup passed [24 checks on a disposable cluster](https://github.com/tommmdl/kubernetes-lab/actions/runs/39174243152).
+
+Argo CD applied the new database digest and instrumented API tag; the application is Synced/Healthy, the PVC UID and volume remain the same, and 19 local tracing checks passed, including log correlation and Prometheus/Loki datasource health. Readiness returns 200 on ports 8000, 8001 and 8005. See `deployment-checks.json`, `tracing-tests.json` and the CI records beside the reports.
+
+All three running note databases were empty at update time. Their private backups were restored and checked, but that alone would not demonstrate a nonempty restore. We therefore also created three controlled notes, including Portuguese text, in the original official PostgreSQL image, dumped them and restored them into the rebuilt image. Row count and content checksums matched. The integration suite separately verifies persistence with a real test note. These checks cover this lab configuration, not every PostgreSQL extension or production workload.
+
+Loading the registry image through Docker save/kind encountered a missing content digest from the registry index. Pulling the pinned image directly with the Kubernetes container runtime on each node succeeded before rollout. No live volume was recreated.

@@ -1,6 +1,11 @@
 {
-  "database": "PostgreSQL 17.11 derived image",
-  "backup_restored": true,
-  "rows_and_content_match": true,
-  "row_count": 0
+  "source": "official PostgreSQL 17.11 / Bookworm",
+  "target": "derived PostgreSQL 17.11 / Bookworm; gosu rebuilt with Go 1.27.2",
+  "seeded_rows": 3,
+  "pg_dump_restored": true,
+  "row_count_and_content_match": true,
+  "includes_non_ascii_text": true,
+  "live_database_rows_at_update": 0,
+  "live_backup_restored_separately": true,
+  "scope": "Controlled nonempty compatibility restore between original and remediated images; separate containers and tmpfs databases; live databases were empty at update time."
 }

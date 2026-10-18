@@ -95,7 +95,7 @@ Essa melhoria de configuração não corrige os pacotes da imagem base. A análi
 
 ## O que ficou fora deste primeiro lab
 
-Os alvos são a imagem básica da API e a imagem do banco. A variante local instrumentada do tracing-lab não faz parte desta matriz. O scan usa somente vulnerabilidades conhecidas do inventário suportado pelo Trivy; não testa exploração, alcance em runtime, secrets, licenças ou toda a configuração do cluster.
+Os alvos são a imagem básica da API e a imagem do banco. A variante local instrumentada do tracing-lab não faz parte desta matriz do CI; ela foi analisada separadamente na rodada de correções, com os relatórios completos em `evidence/remediation/traced-api-*.json`. O scan usa somente vulnerabilidades conhecidas do inventário suportado pelo Trivy; não testa exploração, alcance em runtime, secrets, licenças ou toda a configuração do cluster.
 
 Um achado precisa de triagem. Caminho do arquivo, pacote, versão, fonte do aviso, correção e uso real ajudam a avaliar o impacto. Não há alteração automática das imagens ou exceção inventada para deixar o resultado verde.
 

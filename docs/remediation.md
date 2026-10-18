@@ -32,3 +32,17 @@ Rodamos os 23 testes da API e do Compose em um projeto e volume separados, inclu
 Para repetir a coleta sem filtros: `python3 scripts/scan.py notes-api` e `python3 scripts/scan.py postgres`. A saída 1 indica que o gate mantido bloqueou os achados restantes. Os relatórios completos JSON e SARIF são guardados pelo Actions mesmo quando ele falha. As contagens podem mudar quando a base de vulnerabilidades mudar.
 
 Fontes: [Dockerfile oficial do PostgreSQL](https://github.com/docker-library/postgres/blob/master/17/bookworm/Dockerfile), [fonte do gosu](https://github.com/tianon/gosu/tree/6456aaa0f3c854d199d0f037f068eb97515b7513), [versões do Go](https://go.dev/dl/).
+
+## A API que roda com tracing
+
+A variante local instrumentada também foi reconstruída a partir do digest publicado da API corrigida. As dependências do OpenTelemetry são instaladas em outra etapa do build; pip e ensurepip ficam fora da imagem final. Os relatórios completos `traced-api-before.json` e `traced-api-after.json` mostram a mesma redução de 173 para 164 achados e nenhum achado restante com correção publicada nessa fotografia. Esse scan local adicional não cria um terceiro alvo na matriz remota do CI.
+
+## Ambientes em execução e validação
+
+Os digests publicados foram analisados diretamente no GHCR e repetiram as contagens locais. O [Actions](https://github.com/tommmdl/security-lab/actions/runs/39174255658) aprovou os 15 testes da política/configuração e bloqueou corretamente as duas imagens. A [publicação](https://github.com/tommmdl/github-actions-lab/actions/runs/39174023844) passou pelos 23 testes de integração. O Kubernetes básico com as correções passou por [24 verificações em um cluster descartável](https://github.com/tommmdl/kubernetes-lab/actions/runs/39174243152).
+
+O Argo CD aplicou o novo digest do banco e a tag da API instrumentada; a aplicação está Synced/Healthy, o UID do PVC e o volume continuam iguais, e os 19 testes locais de tracing passaram, incluindo correlação com logs e saúde das fontes Prometheus/Loki. O readiness retorna 200 nas portas 8000, 8001 e 8005. Veja `deployment-checks.json`, `tracing-tests.json` e os registros de CI ao lado dos relatórios.
+
+Os três bancos de notas em execução estavam vazios na atualização. Os backups privados foram restaurados e conferidos, mas isso sozinho não demonstraria uma restauração com dados. Por isso também criamos três notas controladas, incluindo texto em português, na imagem oficial original do PostgreSQL, exportamos e restauramos na imagem recompilada. A contagem e os checksums do conteúdo coincidiram. A suíte de integração também verifica persistência com uma nota real de teste. As verificações cobrem a configuração deste lab, não todas as extensões ou cargas de produção do PostgreSQL.
+
+O carregamento da imagem do registry via Docker save/kind encontrou um digest de conteúdo ausente no índice do registry. O pull do digest diretamente pelo runtime do Kubernetes em cada nó funcionou antes do rollout. Nenhum volume dos ambientes em execução foi recriado.

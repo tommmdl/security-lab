@@ -96,7 +96,7 @@ This configuration improvement does not fix packages in the base image. Dockerfi
 
 ## Scope of this first lab
 
-Targets are the basic API image and the database image. tracing-lab's locally built instrumented variant is outside this matrix. Scanning covers known vulnerabilities in Trivy-supported inventory, not exploitation, runtime reachability, secrets, licenses or the entire cluster configuration.
+Targets are the basic API image and the database image. tracing-lab's locally built instrumented variant is outside this CI matrix; it was scanned separately during remediation, with full reports under `evidence/remediation/traced-api-*.json`. Scanning covers known vulnerabilities in Trivy-supported inventory, not exploitation, runtime reachability, secrets, licenses or the entire cluster configuration.
 
 Findings need triage. File paths, package versions, advisory sources, fixed versions and actual use inform impact assessment. Images are not automatically changed and exceptions are not invented to obtain a green result.
 
