@@ -46,3 +46,5 @@ Argo CD applied the new database digest and instrumented API tag; the applicatio
 All three running note databases were empty at update time. Their private backups were restored and checked, but that alone would not demonstrate a nonempty restore. We therefore also created three controlled notes, including Portuguese text, in the original official PostgreSQL image, dumped them and restored them into the rebuilt image. Row count and content checksums matched. The integration suite separately verifies persistence with a real test note. These checks cover this lab configuration, not every PostgreSQL extension or production workload.
 
 Loading the registry image through Docker save/kind encountered a missing content digest from the registry index. Pulling the pinned image directly with the Kubernetes container runtime on each node succeeded before rollout. No live volume was recreated.
+
+The corrected tracing setup also passed [all 19 checks in CI](https://github.com/tommmdl/tracing-lab/actions/runs/39174296321), using the updated Kubernetes revision on a disposable cluster. The CI result is preserved in `tracing-ci-tests.json`.
