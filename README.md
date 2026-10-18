@@ -14,6 +14,8 @@ Os **15 testes do laboratório passaram**, incluindo um Dockerfile que o Trivy r
 
 Veja os [resultados e o que foi testado](docs/validation.md) e a [triagem dos achados](docs/triage.md).
 
+O [GitHub Actions](https://github.com/tommmdl/security-lab/actions/runs/39173470418) reproduziu esse resultado: **15 testes aprovados e as duas imagens bloqueadas**.
+
 ## Rodar localmente
 
 Use Linux x86_64 ou WSL, Git, Python 3 e curl, com acesso ao GitHub, aos registries e à base de vulnerabilidades. Para estes alvos remotos, não é necessário acesso ao socket Docker nem ao cluster Kubernetes.

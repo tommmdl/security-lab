@@ -1,0 +1,77 @@
+{
+  "notes-api": {
+    "decision": "block",
+    "finding_count": 173,
+    "blocking_count": 48,
+    "blocking_without_fix": 44,
+    "severity_counts": {
+      "LOW": 62,
+      "HIGH": 48,
+      "MEDIUM": 60,
+      "UNKNOWN": 3
+    },
+    "report_sha256_verified": true,
+    "sarif_valid": true,
+    "blocking_findings_match_local": true,
+    "scan": {
+      "scanned_at_utc": "2026-10-18T22:43:51Z",
+      "target": {
+        "name": "notes-api",
+        "image": "ghcr.io/tommmdl/docker-lab@sha256:d8fdaffb99e0ac514b9e031ac9204b89fc2702112d198d1bebedd9d351fd19f0",
+        "context": "Published application image used by docker-lab and the basic Kubernetes lab"
+      },
+      "platform": "linux/amd64",
+      "trivy": {
+        "version": "0.76.0",
+        "asset": "trivy_0.76.0_Linux-64bit.tar.gz",
+        "sha256": "e24b1c51293c1b15e4ba8d45bbc7891ba053f90278ec2698f3562c993e145fe7",
+        "release_url": "https://github.com/aquasecurity/trivy/releases/tag/v0.76.0"
+      },
+      "database_metadata": {
+        "Version": 2,
+        "NextUpdate": "2026-10-19T18:32:29.177029595Z",
+        "UpdatedAt": "2026-10-18T18:32:29.177029985Z",
+        "DownloadedAt": "2026-10-18T22:43:48.797610518Z"
+      },
+      "report_sha256": "f76872dcbe556485c7a3324a4ed2a39518ca2a9c9fdc5ab63351d553045220a5"
+    }
+  },
+  "postgres": {
+    "decision": "block",
+    "finding_count": 472,
+    "blocking_count": 99,
+    "blocking_without_fix": 74,
+    "severity_counts": {
+      "LOW": 173,
+      "HIGH": 95,
+      "MEDIUM": 195,
+      "UNKNOWN": 5,
+      "CRITICAL": 4
+    },
+    "report_sha256_verified": true,
+    "sarif_valid": true,
+    "blocking_findings_match_local": true,
+    "scan": {
+      "scanned_at_utc": "2026-10-18T22:43:54Z",
+      "target": {
+        "name": "postgres",
+        "image": "docker.io/library/postgres@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
+        "context": "PostgreSQL image pinned by kubernetes-lab"
+      },
+      "platform": "linux/amd64",
+      "trivy": {
+        "version": "0.76.0",
+        "asset": "trivy_0.76.0_Linux-64bit.tar.gz",
+        "sha256": "e24b1c51293c1b15e4ba8d45bbc7891ba053f90278ec2698f3562c993e145fe7",
+        "release_url": "https://github.com/aquasecurity/trivy/releases/tag/v0.76.0"
+      },
+      "database_metadata": {
+        "Version": 2,
+        "NextUpdate": "2026-10-19T18:32:29.177029595Z",
+        "UpdatedAt": "2026-10-18T18:32:29.177029985Z",
+        "DownloadedAt": "2026-10-18T22:43:50.261769386Z"
+      },
+      "report_sha256": "440a8c2e77c877a07e7fc87ba8197358affe3b7ccd6c77e08f2d4c3a7df83069"
+    }
+  }
+}

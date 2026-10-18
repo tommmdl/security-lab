@@ -14,6 +14,8 @@ All **15 laboratory tests passed**, including one Dockerfile rejected by Trivy a
 
 See [results and verification scope](docs/validation.en.md) and [finding triage](docs/triage.en.md).
 
+The [GitHub Actions run](https://github.com/tommmdl/security-lab/actions/runs/39173470418) reproduced this outcome: **15 tests passed, both image gates blocked**.
+
 ## Run locally
 
 Use Linux x86_64 or WSL, Git, Python 3 and curl, with access to GitHub, registries and the vulnerability database. These remote targets require neither a Docker socket nor a Kubernetes cluster.

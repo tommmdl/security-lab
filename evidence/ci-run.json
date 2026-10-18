@@ -1,0 +1,26 @@
+{
+  "databaseId": 39173470418,
+  "headSha": "23fc418d6e0d5fc6a27f7d009bb78a7f7801735c",
+  "conclusion": "failure",
+  "url": "https://github.com/tommmdl/security-lab/actions/runs/39173470418",
+  "createdAt": "2026-10-18T22:43:28Z",
+  "updatedAt": "2026-10-18T22:43:58Z",
+  "interpretation": "Laboratory tests passed; both image gates blocked HIGH/CRITICAL findings. Overall failure is the enforced policy result.",
+  "jobs": [
+    {
+      "name": "Confere a pol\u00edtica e os exerc\u00edcios",
+      "conclusion": "success",
+      "url": "https://github.com/tommmdl/security-lab/actions/runs/39173470418/job/117811210966"
+    },
+    {
+      "name": "Gate da imagem (notes-api)",
+      "conclusion": "failure",
+      "url": "https://github.com/tommmdl/security-lab/actions/runs/39173470418/job/117811251273"
+    },
+    {
+      "name": "Gate da imagem (postgres)",
+      "conclusion": "failure",
+      "url": "https://github.com/tommmdl/security-lab/actions/runs/39173470418/job/117811251286"
+    }
+  ]
+}
