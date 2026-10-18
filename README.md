@@ -6,7 +6,11 @@ Os outros laboratórios mostram a aplicação funcionando. Aqui a pergunta muda:
 
 O Trivy analisa duas imagens reais do portfólio por digest: a API básica do docker-lab e o PostgreSQL usado no Kubernetes lab. O GitHub Actions guarda os relatórios e bloqueia a etapa se a política encontrar ocorrências HIGH ou CRITICAL, inclusive sem correção publicada.
 
-## O resultado encontrado
+## Depois da primeira rodada de correções
+
+A API passou de 173 para 164 achados; o PostgreSQL, de 472 para 412. Não restaram achados com correção indicada nessa fotografia da base. Ainda há **44 HIGH na API e 71 HIGH + 3 CRITICAL no banco**, por isso as duas imagens continuam bloqueadas. Os [relatórios completos e a comparação](docs/remediation.md) mostram o que mudou e o que falta tratar.
+
+## O resultado inicial, preservado
 
 Na execução local registrada, a API foi bloqueada por **48 ocorrências HIGH**. O PostgreSQL foi bloqueado por **95 HIGH e 4 CRITICAL**. Essas contagens são ocorrências de pacote/CVE, não necessariamente vulnerabilidades distintas: os conjuntos bloqueados têm 12 e 49 identificadores distintos, respectivamente.
 
@@ -95,6 +99,8 @@ Os alvos são a imagem básica da API e a imagem do banco. A variante local inst
 
 Um achado precisa de triagem. Caminho do arquivo, pacote, versão, fonte do aviso, correção e uso real ajudam a avaliar o impacto. Não há alteração automática das imagens ou exceção inventada para deixar o resultado verde.
 
-Os resumos em `evidence/` são públicos; relatórios completos ficam como artefatos do CI e nos arquivos locais. Nenhum container foi reiniciado ou removido para executar o laboratório. Configuração, testes e registros feitos com ajuda do assistente.
+Os relatórios completos da rodada de correções ficam em `evidence/remediation/`, além dos artefatos do CI. A análise inicial não reiniciou containers; a atualização das imagens tem testes e registros próprios. Configuração, testes e registros feitos com ajuda do assistente.
 
 Referências: [release fixada](https://github.com/aquasecurity/trivy/releases/tag/v0.76.0), [análise de imagens](https://trivy.dev/docs/latest/guide/target/container_image/), [vulnerabilidades e severidades](https://trivy.dev/docs/latest/guide/scanner/vulnerability/) e [integração com CI](https://trivy.dev/docs/latest/ecosystem/cicd/).
+
+A [primeira rodada de correções](docs/remediation.md) compara os relatórios completos de antes e depois. As duas imagens ainda são bloqueadas pelo gate mantido.

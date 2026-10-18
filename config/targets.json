@@ -1,12 +1,12 @@
 [
   {
     "name": "notes-api",
-    "image": "ghcr.io/tommmdl/docker-lab@sha256:d8fdaffb99e0ac514b9e031ac9204b89fc2702112d198d1bebedd9d351fd19f0",
+    "image": "ghcr.io/tommmdl/docker-lab@sha256:343f2b23294c09bea9c3250a3b3fd1f95d817acea9db0231dfaaaf406f22fbac",
     "context": "Published application image used by docker-lab and the basic Kubernetes lab"
   },
   {
     "name": "postgres",
-    "image": "docker.io/library/postgres@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
-    "context": "PostgreSQL image pinned by kubernetes-lab"
+    "image": "ghcr.io/tommmdl/docker-lab@sha256:3150abf7b42612192bce29be02c49880eb17f0f97c93b5527a58ae7454e97dec",
+    "context": "PostgreSQL 17.11 / Bookworm with rebuilt gosu, pinned by kubernetes-lab"
   }
 ]

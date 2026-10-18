@@ -6,7 +6,12 @@ Other labs show the application working. This one asks a different question: wha
 
 Trivy scans two real portfolio images by digest: the basic docker-lab API and the PostgreSQL image used by Kubernetes lab. GitHub Actions preserves reports and blocks HIGH or CRITICAL findings, including those without a published fix.
 
-## What was found
+## After the first remediation round
+
+The API went from 173 to 164 findings; PostgreSQL went from 472 to 412. No finding has a published fix in this database snapshot. **44 HIGH findings remain in the API, and 71 HIGH + 3 CRITICAL remain in the database**, so both images are still blocked. The [full reports and comparison](docs/remediation.en.md) show what changed and what still needs attention.
+
+
+## The initial findings, preserved
 
 The recorded local scan blocked the API for **48 HIGH occurrences** and PostgreSQL for **95 HIGH and 4 CRITICAL**. These are package/advisory occurrences, not necessarily distinct vulnerabilities: the blocking sets contain 12 and 49 distinct identifiers respectively.
 
@@ -95,6 +100,8 @@ Targets are the basic API image and the database image. tracing-lab's locally bu
 
 Findings need triage. File paths, package versions, advisory sources, fixed versions and actual use inform impact assessment. Images are not automatically changed and exceptions are not invented to obtain a green result.
 
-Public summaries live under `evidence/`; full reports are local files and CI artifacts. No container was restarted or removed for this lab. Setup, tests and records were carried out with assistant help.
+Full remediation reports live under `evidence/remediation/` as well as in CI artifacts. The initial scan did not restart containers; image updates have their own checks and records. Setup, tests and records were carried out with assistant help.
 
 References: [pinned release](https://github.com/aquasecurity/trivy/releases/tag/v0.76.0), [image scanning](https://trivy.dev/docs/latest/guide/target/container_image/), [vulnerabilities and severity](https://trivy.dev/docs/latest/guide/scanner/vulnerability/) and [CI integration](https://trivy.dev/docs/latest/ecosystem/cicd/).
+
+The [first remediation round](docs/remediation.en.md) compares complete reports before and after the fixes. Both images still fail the unchanged gate.

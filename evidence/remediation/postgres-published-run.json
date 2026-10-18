@@ -1,0 +1,22 @@
+{
+  "scanned_at_utc": "2026-10-18T22:54:01Z",
+  "target": {
+    "name": "postgres",
+    "image": "ghcr.io/tommmdl/docker-lab@sha256:3150abf7b42612192bce29be02c49880eb17f0f97c93b5527a58ae7454e97dec",
+    "context": "PostgreSQL 17.11 / Bookworm with rebuilt gosu, pinned by kubernetes-lab"
+  },
+  "platform": "linux/amd64",
+  "trivy": {
+    "version": "0.76.0",
+    "asset": "trivy_0.76.0_Linux-64bit.tar.gz",
+    "sha256": "e24b1c51293c1b15e4ba8d45bbc7891ba053f90278ec2698f3562c993e145fe7",
+    "release_url": "https://github.com/aquasecurity/trivy/releases/tag/v0.76.0"
+  },
+  "database_metadata": {
+    "Version": 2,
+    "NextUpdate": "2026-10-19T18:32:29.177029595Z",
+    "UpdatedAt": "2026-10-18T18:32:29.177029985Z",
+    "DownloadedAt": "2026-10-18T22:34:48.050436036Z"
+  },
+  "report_sha256": "d4f391e19ba617ba5364f1379e9bc797f0a313e6c51f2e5ff369343dc218a0f2"
+}

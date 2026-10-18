@@ -1,0 +1,6 @@
+{
+  "database": "PostgreSQL 17.11 derived image",
+  "backup_restored": true,
+  "rows_and_content_match": true,
+  "row_count": 0
+}

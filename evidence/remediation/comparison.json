@@ -1,0 +1,67 @@
+{
+  "database": {
+    "Version": 2,
+    "NextUpdate": "2026-10-19T18:32:29.177029595Z",
+    "UpdatedAt": "2026-10-18T18:32:29.177029985Z",
+    "DownloadedAt": "2026-10-18T22:34:48.050436036Z"
+  },
+  "scanner": "Trivy 0.76.0",
+  "platform": "linux/amd64",
+  "policy_changed": false,
+  "findings": {
+    "notes-api": {
+      "before": {
+        "counts": {
+          "LOW": 62,
+          "HIGH": 48,
+          "MEDIUM": 60,
+          "UNKNOWN": 3
+        },
+        "total": 173,
+        "with_fix": 9
+      },
+      "after": {
+        "counts": {
+          "LOW": 61,
+          "HIGH": 44,
+          "MEDIUM": 58,
+          "UNKNOWN": 1
+        },
+        "total": 164,
+        "with_fix": 0
+      },
+      "before_image": "ghcr.io/tommmdl/docker-lab@sha256:d8fdaffb99e0ac514b9e031ac9204b89fc2702112d198d1bebedd9d351fd19f0",
+      "after_image_id": "sha256:53e12e7ec7699f7422c7e2e3c957d35bb5d4fd94cf99fc0ed506003abb44aaed",
+      "before_report_sha256": "6e9f247d36ade30b1173fad8aae92ceb6d0996dfe88a30a185accab2e8624729",
+      "after_report_sha256": "38618b8261d13e84b5fbade97193a5b27b31fabbeb8d640a164a73563f0bd90e"
+    },
+    "postgres": {
+      "before": {
+        "counts": {
+          "LOW": 173,
+          "HIGH": 95,
+          "MEDIUM": 195,
+          "UNKNOWN": 5,
+          "CRITICAL": 4
+        },
+        "total": 472,
+        "with_fix": 60
+      },
+      "after": {
+        "counts": {
+          "LOW": 170,
+          "HIGH": 71,
+          "MEDIUM": 164,
+          "UNKNOWN": 4,
+          "CRITICAL": 3
+        },
+        "total": 412,
+        "with_fix": 0
+      },
+      "before_image": "docker.io/library/postgres@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
+      "after_image_id": "sha256:271898f694dbb3aebce0c9290cd99b28e0e6a5371b64544df327e7f4a7b16ac4",
+      "before_report_sha256": "fa06bc45168e28758cfab0eeb9f2cd2172c5a53c7080dacf50435dffa0d002c9",
+      "after_report_sha256": "c3866673da0058c483c4a37594090982003eb1427b6263df954bad5375add878"
+    }
+  }
+}
