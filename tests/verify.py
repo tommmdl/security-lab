@@ -4,6 +4,7 @@ import copy,json,subprocess,sys,time
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 local=ROOT/'.local/tests';local.mkdir(parents=True,exist_ok=True)
+(ROOT/'.local/verification.json').unlink(missing_ok=True)
 checks=[]
 def check(label,value):
     assert value,label
@@ -32,18 +33,20 @@ invalid=local/'invalid.json';invalid.write_text('{not-json')
 check('Malformed report exits with error code 2',subprocess.run([sys.executable,str(ROOT/'scripts/gate.py'),str(invalid)],capture_output=True).returncode==2)
 check('Missing report exits with error code 2',subprocess.run([sys.executable,str(ROOT/'scripts/gate.py'),str(local/'absent.json')],capture_output=True).returncode==2)
 check('JSON array cannot become an approved image report',run([])==2)
-wrong=copy.deepcopy(base);wrong['Results'][0]['Vulnerabilities']={'unexpected':'object'}
+wrong=copy.deepcopy(base);wrong['Results'][0]['Vulnerabilities']={}
 check('Invalid finding collection exits with error code 2',run(wrong)==2)
 statuses={}
 for fixture in ['unsafe','improved']:
     report=local/(fixture+'.json')
-    result=subprocess.run([str(ROOT/'.local/bin/trivy'),'config','--cache-dir',str(ROOT/'.local/cache'),'--no-progress','--severity','HIGH,CRITICAL','--exit-code','1','--format','json','--output',str(report),str(ROOT/'fixtures/dockerfiles'/fixture)])
+    report.unlink(missing_ok=True)
+    result=subprocess.run([str(ROOT/'.local/bin/trivy'),'config','--cache-dir',str(ROOT/'.local/cache'),'--severity','HIGH,CRITICAL','--exit-code','1','--format','json','--output',str(report),str(ROOT/'fixtures/dockerfiles'/fixture)])
     statuses[fixture]=result.returncode
+    if not report.exists():raise RuntimeError('Trivy did not produce a new configuration report: '+fixture)
     if result.returncode not in [0,1]:raise RuntimeError('Trivy config failed: '+fixture)
     data=json.loads(report.read_text())
     failures=[{'id':v['ID'],'severity':v['Severity'],'status':v['Status']} for target in data.get('Results',[]) for v in target.get('Misconfigurations',[]) if v['Status']=='FAIL']
     statuses[fixture+'_findings']=failures
-check('Actual Trivy scan rejects the root-user Dockerfile',statuses['unsafe']==1 and bool(statuses['unsafe_findings']))
+check('Actual Trivy scan rejects the root-user Dockerfile',statuses['unsafe']==1 and any(v['id']=='DS-0002' for v in statuses['unsafe_findings']))
 check('Actual Trivy scan accepts the improved Dockerfile at HIGH/CRITICAL threshold',statuses['improved']==0 and not statuses['improved_findings'])
 output={'executed_at_utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'checks_passed':len(checks),'checks':checks,'config_drill':statuses,'scope':'Synthetic fixtures test policy exits; separate actual Trivy config scans test Dockerfile findings. Neither fixture is a vulnerability scan of a production image.'}
 (ROOT/'.local/verification.json').write_text(json.dumps(output,indent=2)+'\n')

@@ -2,7 +2,7 @@
 
 [English](validation.en.md) · [Início](../README.md)
 
-Os [13 testes locais](../evidence/local-tests.json) passaram. Onze usam relatórios sintéticos identificados como fixtures para testar os códigos de aprovação, bloqueio e erro: ausência de achados, severidade média, HIGH com e sem correção, CRITICAL, fim de suporte do sistema, inventário ausente, severidade inesperada, JSON inválido e arquivo inexistente.
+Os [15 testes locais](../evidence/local-tests.json) passaram. Treze usam relatórios sintéticos identificados como fixtures para testar os códigos de aprovação, bloqueio e erro: ausência de achados, severidade média, HIGH com e sem correção, CRITICAL, fim de suporte do sistema, inventário ausente, severidade inesperada, JSON inválido e arquivo inexistente.
 
 Os outros dois testes executam Trivy config de verdade. O Dockerfile com USER root foi rejeitado por DS-0002; o exemplo com usuário não root e healthcheck passou no limiar HIGH/CRITICAL. Isso valida uma análise de configuração, não a remoção de vulnerabilidades da imagem base.
 

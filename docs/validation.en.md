@@ -2,7 +2,7 @@
 
 English · [Português](validation.md) · [Home](../README.en.md)
 
-All [13 local tests](../evidence/local-tests.json) passed. Eleven use explicitly synthetic reports to exercise approval, blocking and error exits: no findings, medium severity, HIGH with/without fixes, CRITICAL, OS end-of-life, missing inventory, unexpected severity, malformed JSON and missing files.
+All [15 local tests](../evidence/local-tests.json) passed. Thirteen use explicitly synthetic reports to exercise approval, blocking and error exits: no findings, medium severity, HIGH with/without fixes, CRITICAL, OS end-of-life, missing inventory, unexpected severity, malformed JSON and missing files.
 
 Two further tests run actual Trivy config scans. USER root was rejected by DS-0002; the non-root example with a healthcheck passed at HIGH/CRITICAL threshold. This verifies configuration scanning, not removal of base-image vulnerabilities.
 

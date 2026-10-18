@@ -10,7 +10,7 @@ Trivy scans two real portfolio images by digest: the basic docker-lab API and th
 
 The recorded local scan blocked the API for **48 HIGH occurrences** and PostgreSQL for **95 HIGH and 4 CRITICAL**. These are package/advisory occurrences, not necessarily distinct vulnerabilities: the blocking sets contain 12 and 49 distinct identifiers respectively.
 
-All **13 laboratory tests passed**, including one Dockerfile rejected by Trivy and an improved configuration accepted by it. This does not approve the images: tests and image gates have separate results. The complete workflow should remain red while target images violate the policy.
+All **15 laboratory tests passed**, including one Dockerfile rejected by Trivy and an improved configuration accepted by it. This does not approve the images: tests and image gates have separate results. The complete workflow should remain red while target images violate the policy.
 
 See [results and verification scope](docs/validation.en.md) and [finding triage](docs/triage.en.md).
 

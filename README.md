@@ -10,7 +10,7 @@ O Trivy analisa duas imagens reais do portfólio por digest: a API básica do do
 
 Na execução local registrada, a API foi bloqueada por **48 ocorrências HIGH**. O PostgreSQL foi bloqueado por **95 HIGH e 4 CRITICAL**. Essas contagens são ocorrências de pacote/CVE, não necessariamente vulnerabilidades distintas: os conjuntos bloqueados têm 12 e 49 identificadores distintos, respectivamente.
 
-Os **13 testes do laboratório passaram**, incluindo um Dockerfile que o Trivy rejeita e outro que passa na análise de configuração. Isso não aprova as imagens: o job de testes e os gates de imagem têm resultados separados. O workflow completo deve ficar vermelho enquanto as imagens violarem a política.
+Os **15 testes do laboratório passaram**, incluindo um Dockerfile que o Trivy rejeita e outro que passa na análise de configuração. Isso não aprova as imagens: o job de testes e os gates de imagem têm resultados separados. O workflow completo deve ficar vermelho enquanto as imagens violarem a política.
 
 Veja os [resultados e o que foi testado](docs/validation.md) e a [triagem dos achados](docs/triage.md).
 

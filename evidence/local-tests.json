@@ -1,6 +1,6 @@
 {
-  "executed_at_utc": "2026-10-18T22:36:36Z",
-  "checks_passed": 13,
+  "executed_at_utc": "2026-10-18T22:43:20Z",
+  "checks_passed": 15,
   "checks": [
     "Valid image report without findings is allowed",
     "Medium findings remain reported without blocking",
@@ -13,6 +13,8 @@
     "Unexpected severity is an error",
     "Malformed report exits with error code 2",
     "Missing report exits with error code 2",
+    "JSON array cannot become an approved image report",
+    "Invalid finding collection exits with error code 2",
     "Actual Trivy scan rejects the root-user Dockerfile",
     "Actual Trivy scan accepts the improved Dockerfile at HIGH/CRITICAL threshold"
   ],

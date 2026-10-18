@@ -16,7 +16,8 @@ def evaluate(report,policy):
     if policy['require_package_inventory'] and not any(r.get('Packages') for r in results):raise ValueError('Image report has no package inventory')
     findings=[]
     for result in results:
-        vulnerabilities=result.get('Vulnerabilities') or []
+        vulnerabilities=result.get('Vulnerabilities')
+        if vulnerabilities is None:vulnerabilities=[]
         if not isinstance(vulnerabilities,list):raise ValueError('Vulnerabilities must be a list')
         for finding in vulnerabilities:
             if not isinstance(finding,dict):raise ValueError('Malformed vulnerability finding')
