@@ -1,0 +1,12 @@
+[
+  {
+    "name": "notes-api",
+    "image": "ghcr.io/tommmdl/docker-lab@sha256:d8fdaffb99e0ac514b9e031ac9204b89fc2702112d198d1bebedd9d351fd19f0",
+    "context": "Published application image used by docker-lab and the basic Kubernetes lab"
+  },
+  {
+    "name": "postgres",
+    "image": "docker.io/library/postgres@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
+    "context": "PostgreSQL image pinned by kubernetes-lab"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "notes-api": {
+    "decision": "block",
+    "blocking_count": 48,
+    "blocking_without_fix": 44,
+    "finding_count": 173,
+    "severity_counts": {
+      "LOW": 62,
+      "HIGH": 48,
+      "MEDIUM": 60,
+      "UNKNOWN": 3
+    },
+    "unique_blocking_ids": 12
+  },
+  "postgres": {
+    "decision": "block",
+    "blocking_count": 99,
+    "blocking_without_fix": 74,
+    "finding_count": 472,
+    "severity_counts": {
+      "LOW": 173,
+      "HIGH": 95,
+      "MEDIUM": 195,
+      "UNKNOWN": 5,
+      "CRITICAL": 4
+    },
+    "unique_blocking_ids": 49
+  }
+}

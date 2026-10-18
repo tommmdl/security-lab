@@ -1,0 +1,61 @@
+name: Analisa as imagens com Trivy
+on:
+  push:
+    branches: [main]
+    paths: ['config/**', 'scripts/**', 'tests/**', 'fixtures/**', '.github/workflows/**']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  laboratory:
+    name: Confere a política e os exercícios
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Instala a versão fixada do Trivy
+        run: python3 scripts/prepare.py
+      - name: Testa bloqueio, erros e Dockerfiles
+        run: python3 tests/verify.py
+      - name: Guarda as verificações
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: laboratory-results
+          path: |
+            .local/verification.json
+            .local/tests/unsafe.json
+            .local/tests/improved.json
+          include-hidden-files: true
+          retention-days: 30
+          if-no-files-found: warn
+  image-gate:
+    name: Gate da imagem (${{ matrix.target }})
+    needs: laboratory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [notes-api, postgres]
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Instala a versão fixada do Trivy
+        run: python3 scripts/prepare.py
+      - name: Analisa a imagem e aplica o bloqueio
+        run: python3 scripts/scan.py "${{ matrix.target }}"
+      - name: Guarda o relatório mesmo com bloqueio
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: scan-${{ matrix.target }}
+          path: .local/reports/${{ matrix.target }}/
+          include-hidden-files: true
+          retention-days: 30
+          if-no-files-found: warn

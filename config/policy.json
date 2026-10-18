@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "block_severities": ["HIGH", "CRITICAL"],
+  "include_unfixed": true,
+  "block_end_of_life_os": true,
+  "require_package_inventory": true
+}
