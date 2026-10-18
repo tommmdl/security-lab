@@ -31,10 +31,13 @@ check('Unexpected severity is an error',run(finding('SUPER_HIGH'))==2)
 invalid=local/'invalid.json';invalid.write_text('{not-json')
 check('Malformed report exits with error code 2',subprocess.run([sys.executable,str(ROOT/'scripts/gate.py'),str(invalid)],capture_output=True).returncode==2)
 check('Missing report exits with error code 2',subprocess.run([sys.executable,str(ROOT/'scripts/gate.py'),str(local/'absent.json')],capture_output=True).returncode==2)
+check('JSON array cannot become an approved image report',run([])==2)
+wrong=copy.deepcopy(base);wrong['Results'][0]['Vulnerabilities']={'unexpected':'object'}
+check('Invalid finding collection exits with error code 2',run(wrong)==2)
 statuses={}
 for fixture in ['unsafe','improved']:
     report=local/(fixture+'.json')
-    result=subprocess.run([str(ROOT/'.local/bin/trivy'),'config','--cache-dir',str(ROOT/'.local/cache'),'--severity','HIGH,CRITICAL','--exit-code','1','--format','json','--output',str(report),str(ROOT/'fixtures/dockerfiles'/fixture)])
+    result=subprocess.run([str(ROOT/'.local/bin/trivy'),'config','--cache-dir',str(ROOT/'.local/cache'),'--no-progress','--severity','HIGH,CRITICAL','--exit-code','1','--format','json','--output',str(report),str(ROOT/'fixtures/dockerfiles'/fixture)])
     statuses[fixture]=result.returncode
     if result.returncode not in [0,1]:raise RuntimeError('Trivy config failed: '+fixture)
     data=json.loads(report.read_text())
