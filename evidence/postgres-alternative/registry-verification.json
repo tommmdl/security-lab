@@ -1,0 +1,14 @@
+[
+  {
+    "image": "ghcr.io/tommmdl/docker-lab@sha256:f679d0d3365cdb2580428484d3c0908072629f5f853994ebc50c794f8fac72b5",
+    "config_digest": "sha256:1613eabd16bc3d9e9e0c45c51c1408f8bef6c50df7ea8089cad1efc9dad99b75",
+    "matches_ci_tested_image": true,
+    "manifest_hash_verified": true
+  },
+  {
+    "image": "ghcr.io/tommmdl/docker-lab@sha256:8b6813ec76804698c33e4dac8f501ca8f641affcbd27cbc3b7dd6fdb02874fc3",
+    "config_digest": "sha256:e44557abf3e37f154c8c7937d8583312b374d0a01069d6716234f8a4666dc6d5",
+    "matches_ci_tested_image": true,
+    "manifest_hash_verified": true
+  }
+]

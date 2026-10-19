@@ -1,0 +1,14 @@
+postgres (PostgreSQL) 17.11
+uid=70(postgres) gid=70(postgres) groups=70(postgres),70(postgres)
+libxml2: XML parsing library, version 2
+libxml2: https://gitlab.gnome.org/GNOME/libxml2
+libxml2: 1046 KiB
+zlib: A compression/decompression Library
+zlib: https://zlib.net/
+zlib: 105 KiB
+zlib: A compression/decompression Library
+zlib: https://zlib.net/
+zlib: 105 KiB
+/bin/bash
+ '--enable-option-checking=fatal' '--build=x86_64-linux-musl' '--enable-integer-datetimes' '--enable-tap-tests' '--disable-rpath' '--with-uuid=e2fs' '--with-pgport=5432' '--with-system-tzdata=/usr/share/zoneinfo' '--prefix=/usr/local' '--with-includes=/usr/local/include' '--with-libraries=/usr/local/lib' '--with-gssapi' '--with-icu' '--with-ldap' '--with-libxml' '--with-libxslt' '--with-llvm' '--with-lz4' '--with-openssl' '--with-perl' '--with-python' '--with-tcl' '--with-zstd' 'build_alias=x86_64-linux-musl' 'LLVM_CONFIG=/usr/lib/llvm21/bin/llvm-config' 'CLANG=clang-21'
+drwxrwsrwt    2 postgres postgres      4096 Sep 17 21:31 /var/run/postgresql

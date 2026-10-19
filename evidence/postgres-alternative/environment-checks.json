@@ -1,0 +1,24 @@
+{
+  "verified_at_utc": "2026-10-19T00:41:48Z",
+  "original_instances": {
+    "kubernetes": {
+      "note_fields_unchanged": true,
+      "row_count": 0
+    },
+    "compose": {
+      "note_fields_unchanged": true,
+      "row_count": 0
+    },
+    "demo": {
+      "note_fields_unchanged": true,
+      "row_count": 0
+    }
+  },
+  "alternative": {
+    "url": "http://localhost:8015",
+    "fixture_rows": 7,
+    "separate_volume": true,
+    "original_pgdata_reused": false
+  },
+  "kubernetes_pvc_unchanged": true
+}

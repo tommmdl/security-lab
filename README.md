@@ -4,7 +4,11 @@
 
 Os outros laboratórios mostram a aplicação funcionando. Aqui a pergunta muda: o que existe dentro da imagem que merece atenção antes de ela seguir no pipeline?
 
-O Trivy analisa duas imagens reais do portfólio por digest: a API básica do docker-lab e o PostgreSQL usado no Kubernetes lab. O GitHub Actions guarda os relatórios e bloqueia a etapa se a política encontrar ocorrências HIGH ou CRITICAL, inclusive sem correção publicada.
+O Trivy analisa três imagens por digest: a API básica, o PostgreSQL Bookworm usado nos labs e uma alternativa Alpine testada em separado. O GitHub Actions guarda os relatórios e bloqueia a etapa se a política encontrar ocorrências HIGH ou CRITICAL, inclusive sem correção publicada.
+
+## Uma alternativa testada para a libxml2
+
+A alternativa Alpine ficou com **zero achados na análise completa registrada**. Passaram os testes de restauração lógica, API, segurança e retorno ao Debian; os bancos originais continuam intactos. Os gates da API e do Bookworm seguem bloqueados. Veja a [comparação e as evidências completas](docs/postgres-alternative.md).
 
 ## Análise dos críticos restantes do PostgreSQL
 
@@ -33,6 +37,7 @@ python3 scripts/prepare.py
 python3 tests/verify.py
 python3 scripts/scan.py notes-api
 python3 scripts/scan.py postgres
+python3 scripts/scan.py postgres-alpine
 ```
 
 Cada comando de scan pode encerrar com código 1 porque a imagem foi bloqueada. Execute os alvos separadamente ou use terminais separados; não coloque `|| true` num pipeline de aprovação. O cache local do Trivy pode serializar acessos concorrentes.

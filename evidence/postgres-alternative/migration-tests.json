@@ -1,0 +1,63 @@
+{
+  "checks_passed": 20,
+  "checks": [
+    "Source contains seven Unicode notes",
+    "Source and target use separate volumes",
+    "Logical restore preserves every note field",
+    "Identity sequence state is preserved at restore",
+    "Target uses UTF8",
+    "Target uses PostgreSQL 17",
+    "Column types, nullability and identity are preserved",
+    "Notes indexes are preserved",
+    "Target locale provider is explicitly ICU/en-US",
+    "API returns the same restored notes",
+    "New generated ID does not collide",
+    "Restored notes survive all API and lifecycle checks",
+    "Benign XPath works with the replacement libxml2",
+    "Logical rollback into a separate Debian database preserves every row",
+    "Logical rollback preserves current sequence state",
+    "Original source rows remain unchanged",
+    "Original source sequence remains unchanged",
+    "Live kubernetes backup restores without changing note fields",
+    "Live compose backup restores without changing note fields",
+    "Live demo backup restores without changing note fields"
+  ],
+  "source_image": "ghcr.io/tommmdl/docker-lab@sha256:be42c09595d7059956490eeab607b742afc96268db48f91f4eb1fd53edc89b52",
+  "candidate_image": "docker-lab-postgres-alpine:local",
+  "source_locale": {
+    "datlocprovider": "c",
+    "datcollate": "en_US.utf8",
+    "datctype": "en_US.utf8",
+    "datlocale": null,
+    "datcollversion": "2.36"
+  },
+  "target_locale": {
+    "datlocprovider": "i",
+    "datcollate": "C",
+    "datctype": "C.UTF-8",
+    "datlocale": "en-US",
+    "datcollversion": "153.136"
+  },
+  "source_volume_reused": false,
+  "fixture_rows": 7,
+  "api_checks": 23,
+  "security_checks": 20,
+  "live_restores": [
+    {
+      "source": "kubernetes",
+      "rows": 0,
+      "all_note_fields_preserved": true
+    },
+    {
+      "source": "compose",
+      "rows": 0,
+      "all_note_fields_preserved": true
+    },
+    {
+      "source": "demo",
+      "rows": 0,
+      "all_note_fields_preserved": true
+    }
+  ],
+  "scope": "Separate volumes and logical dumps; lab notes schema, not a physical data-directory swap or a general PostgreSQL migration certification."
+}

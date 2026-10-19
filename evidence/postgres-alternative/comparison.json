@@ -1,0 +1,53 @@
+{
+  "scanner": "Trivy 0.76.0",
+  "database": {
+    "Version": 2,
+    "NextUpdate": "2026-10-19T18:32:29.177029595Z",
+    "UpdatedAt": "2026-10-18T18:32:29.177029985Z",
+    "DownloadedAt": "2026-10-18T22:34:48.050436036Z"
+  },
+  "policy_changed": false,
+  "suppressed_cves": [],
+  "baseline_report": "evidence/critical-review/published-scan.json",
+  "baseline": {
+    "total": 350,
+    "counts": {
+      "LOW": 136,
+      "HIGH": 68,
+      "MEDIUM": 140,
+      "UNKNOWN": 4,
+      "CRITICAL": 2
+    },
+    "target_cve_present": true,
+    "inventory_present": true
+  },
+  "upstream": {
+    "total": 61,
+    "counts": {
+      "MEDIUM": 32,
+      "UNKNOWN": 1,
+      "CRITICAL": 1,
+      "HIGH": 24,
+      "LOW": 3
+    },
+    "target_cve_present": false,
+    "inventory_present": true,
+    "report_sha256": "d5f4383533645ddfde3334b9231425fed16fe853dbae1af5d0635b635083f576"
+  },
+  "helper-only": {
+    "total": 1,
+    "counts": {
+      "MEDIUM": 1
+    },
+    "target_cve_present": false,
+    "inventory_present": true,
+    "report_sha256": "89cc8a0267c0fff22bcc808ced464f970df2899c51d8d6b373df06d6d1b0b38f"
+  },
+  "candidate": {
+    "total": 0,
+    "counts": {},
+    "target_cve_present": false,
+    "inventory_present": true,
+    "report_sha256": "3e30e8ee73bb3515ba4b8535badba94b0f2f0a8a4ceddee462cd969a5b4b9f6a"
+  }
+}
