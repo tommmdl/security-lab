@@ -1,0 +1,28 @@
+{
+  "before": {
+    "findings": 164,
+    "counts": {
+      "LOW": 61,
+      "HIGH": 44,
+      "MEDIUM": 58,
+      "UNKNOWN": 1
+    },
+    "distinct_high_cves": 8,
+    "package_inventory_entries": 98
+  },
+  "after": {
+    "findings": 164,
+    "counts": {
+      "LOW": 61,
+      "HIGH": 44,
+      "MEDIUM": 58,
+      "UNKNOWN": 1
+    },
+    "distinct_high_cves": 8,
+    "package_inventory_entries": 98
+  },
+  "all_finding_fingerprints_unchanged": true,
+  "active_ignore_rules": [],
+  "policy_sha256": "56e0e21299eceae4f70be91344e6ca981fced7b59d147e826853665d3ed32f03",
+  "conclusion": "Runtime mitigations, no binary patch, no removed findings; gate remains blocked."
+}

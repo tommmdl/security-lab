@@ -54,3 +54,7 @@ Do not run runtime checks alongside API lifecycle tests. Remote scanning and tri
 The [complete reports, checks and limits](../evidence/api-high-review) preserve before/after snapshots. Reduced exposure was not converted into an artificial finding reduction: all 44 HIGH occurrences remain visible and blocking.
 
 Recorded verification: **16 Docker runtime checks, 13 Kubernetes runtime checks and 23 API integration checks passed**. Docker cgroups reported 256 MiB, 100000/100000 CPU quota and 128 PIDs. Kubernetes reported 256 MiB and 100000/100000 CPU quota; its existing effective PID bound is recorded without attributing it to a new manifest setting. The post-mitigation full scan still reports 164 findings/44 HIGH and remains blocked.
+
+The instrumented API also passed 19 tracing checks after the CPU limit rollout. All 15 policy tests passed independently. The deployment record confirms the Docker image matches the scanned digest, the tracing derivative is unchanged, and Argo is Synced/Healthy with self-heal enabled.
+
+The [security workflow](https://github.com/tommmdl/security-lab/actions/runs/39249785138) reproduced the result: 15 policy tests passed, the API remained blocked by 44 HIGH, active Alpine PostgreSQL passed and retained Bookworm remained blocked. The [Kubernetes workflow](https://github.com/tommmdl/kubernetes-lab/actions/runs/39249676675) passed all 24 functional recovery/persistence/rollback checks after adding the CPU quota. Full API CI JSON/SARIF reports are preserved alongside the local reports.

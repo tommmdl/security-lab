@@ -1,0 +1,31 @@
+{
+  "verified_at_utc": "2026-10-19T12:09:21Z",
+  "docker_api_matches_scanned_image": true,
+  "docker_image": "sha256:343f2b23294c09bea9c3250a3b3fd1f95d817acea9db0231dfaaaf406f22fbac",
+  "kubernetes_api_image": "tracing-lab-api:otel-c5d4e188167922bd",
+  "image_rebuilt": false,
+  "argocd": {
+    "sync": "Synced",
+    "health": "Healthy",
+    "revision": "e45c4f27135f09a97574230553ca8ee9fb91c080",
+    "self_heal": true
+  },
+  "readiness_by_port": {
+    "8000": 200,
+    "8005": 200
+  },
+  "database_image_unchanged": "ghcr.io/tommmdl/docker-lab@sha256:8b6813ec76804698c33e4dac8f501ca8f641affcbd27cbc3b7dd6fdb02874fc3",
+  "host_pid_namespace": {
+    "docker": "",
+    "kubernetes": false
+  },
+  "docker_privileged": false,
+  "docker_port_bindings": {
+    "8000/tcp": [
+      {
+        "HostIp": "127.0.0.1",
+        "HostPort": "8000"
+      }
+    ]
+  }
+}

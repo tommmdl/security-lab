@@ -1,0 +1,34 @@
+{
+  "executed_at_utc": "2026-10-19T12:08:30Z",
+  "checks_passed": 15,
+  "checks": [
+    "Valid image report without findings is allowed",
+    "Medium findings remain reported without blocking",
+    "High finding with a fix blocks",
+    "High finding without a fix also blocks",
+    "Critical finding blocks",
+    "End-of-life operating system blocks",
+    "Missing scan results are an error rather than approval",
+    "Missing package inventory is an error",
+    "Unexpected severity is an error",
+    "Malformed report exits with error code 2",
+    "Missing report exits with error code 2",
+    "JSON array cannot become an approved image report",
+    "Invalid finding collection exits with error code 2",
+    "Actual Trivy scan rejects the root-user Dockerfile",
+    "Actual Trivy scan accepts the improved Dockerfile at HIGH/CRITICAL threshold"
+  ],
+  "config_drill": {
+    "unsafe": 1,
+    "unsafe_findings": [
+      {
+        "id": "DS-0002",
+        "severity": "HIGH",
+        "status": "FAIL"
+      }
+    ],
+    "improved": 0,
+    "improved_findings": []
+  },
+  "scope": "Synthetic fixtures test policy exits; separate actual Trivy config scans test Dockerfile findings. Neither fixture is a vulnerability scan of a production image."
+}
