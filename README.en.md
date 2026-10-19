@@ -6,6 +6,10 @@ Other labs show the application working. This one asks a different question: wha
 
 Trivy scans three images by digest: the basic API, the active Alpine PostgreSQL, and the retained Bookworm recovery image. GitHub Actions preserves reports and blocks HIGH or CRITICAL findings, including those without a published fix.
 
+## Reviewing the API
+
+Its 44 HIGH occurrences correspond to eight distinct operating-system CVEs. This round checks prerequisites and strengthens runtime limits; it does not claim binary patches or reduce the gate count. [Review, evidence and remaining work](docs/api-high-review.en.md).
+
 ## Adopted in Docker and Kubernetes
 
 The active database now uses the tested Alpine digest. Logical backups, fresh restore volumes and actual API rollback passed in both labs, including a note created after cutover. [Adoption and recovery procedure](docs/postgres-adoption.en.md). The matrix keeps the affected Bookworm recovery image as `postgres-bookworm`; earlier reports remain available.

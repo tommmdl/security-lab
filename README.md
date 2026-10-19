@@ -6,6 +6,10 @@ Os outros laboratórios mostram a aplicação funcionando. Aqui a pergunta muda:
 
 O Trivy analisa três imagens por digest: a API básica, o PostgreSQL Alpine ativo nos labs e o Bookworm guardado para recuperação. O GitHub Actions guarda os relatórios e bloqueia a etapa se a política encontrar ocorrências HIGH ou CRITICAL, inclusive sem correção publicada.
 
+## Analisando a API
+
+Os 44 HIGH correspondem a oito CVEs distintas do sistema operacional. Esta rodada confere os pré-requisitos e reforça limites do runtime; não declara patches nos binários nem reduz a contagem do gate. [Análise, evidências e pendências](docs/api-high-review.md).
+
 ## Adotado no Docker e no Kubernetes
 
 O banco ativo agora usa o digest Alpine testado. Backup lógico, restauração em volumes novos e rollback real da API passaram nos dois labs, incluindo uma nota criada depois da troca. [Procedimento de adoção e recuperação](docs/postgres-adoption.md). A matriz mantém a imagem Bookworm de recuperação como `postgres-bookworm`; os relatórios anteriores continuam disponíveis.

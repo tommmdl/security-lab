@@ -1,0 +1,22 @@
+{
+  "scanned_at_utc": "2026-10-19T12:03:33Z",
+  "target": {
+    "name": "notes-api",
+    "image": "ghcr.io/tommmdl/docker-lab@sha256:343f2b23294c09bea9c3250a3b3fd1f95d817acea9db0231dfaaaf406f22fbac",
+    "context": "Published application image used by docker-lab and the basic Kubernetes lab"
+  },
+  "platform": "linux/amd64",
+  "trivy": {
+    "version": "0.76.0",
+    "asset": "trivy_0.76.0_Linux-64bit.tar.gz",
+    "sha256": "e24b1c51293c1b15e4ba8d45bbc7891ba053f90278ec2698f3562c993e145fe7",
+    "release_url": "https://github.com/aquasecurity/trivy/releases/tag/v0.76.0"
+  },
+  "database_metadata": {
+    "Version": 2,
+    "NextUpdate": "2026-10-19T18:32:29.177029595Z",
+    "UpdatedAt": "2026-10-18T18:32:29.177029985Z",
+    "DownloadedAt": "2026-10-18T22:34:48.050436036Z"
+  },
+  "report_sha256": "f589b192cc1deb9f62f78201b0dd5bf070656182375fc7eefa2b030d4ae52ed6"
+}

@@ -1,0 +1,333 @@
+{
+  "image": "ghcr.io/tommmdl/docker-lab@sha256:343f2b23294c09bea9c3250a3b3fd1f95d817acea9db0231dfaaaf406f22fbac",
+  "high_occurrences": 44,
+  "distinct_high_cves": 8,
+  "report_sha256": "f589b192cc1deb9f62f78201b0dd5bf070656182375fc7eefa2b030d4ae52ed6",
+  "reviews": [
+    {
+      "cve": "CVE-2025-69720",
+      "high_occurrences": 4,
+      "source_family": "ncurses",
+      "packages": [
+        {
+          "name": "libncursesw6",
+          "installed_version": "6.5+20250216-2",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "libtinfo6",
+          "installed_version": "6.5+20250216-2",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "ncurses-base",
+          "installed_version": "6.5+20250216-2",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "ncurses-bin",
+          "installed_version": "6.5+20250216-2",
+          "fixed_version_reported": null
+        }
+      ],
+      "vendor_source": "https://security-tracker.debian.org/tracker/CVE-2025-69720",
+      "prerequisite": "infocmp CLI stack overflow",
+      "mitigation_or_reachability": "infocmp is present; notes routes do not invoke it or accept terminfo input",
+      "scanner_decision": "still HIGH and blocking",
+      "patch_status": "No fixed version reported for the installed release in this scan; stable candidates inspected separately",
+      "not_a_vex_or_ignore_rule": true
+    },
+    {
+      "cve": "CVE-2026-16742",
+      "high_occurrences": 2,
+      "source_family": "systemd",
+      "packages": [
+        {
+          "name": "libsystemd0",
+          "installed_version": "257.13-1~deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "libudev1",
+          "installed_version": "257.13-1~deb13u1",
+          "fixed_version_reported": null
+        }
+      ],
+      "vendor_source": "https://security-tracker.debian.org/tracker/CVE-2026-16742",
+      "prerequisite": "systemd-homed local group manipulation",
+      "mitigation_or_reachability": "Specific systemd-homed binary/service is absent; package finding retained",
+      "scanner_decision": "still HIGH and blocking",
+      "patch_status": "No fixed version reported for the installed release in this scan; stable candidates inspected separately",
+      "not_a_vex_or_ignore_rule": true
+    },
+    {
+      "cve": "CVE-2026-54369",
+      "high_occurrences": 1,
+      "source_family": "acl",
+      "packages": [
+        {
+          "name": "libacl1",
+          "installed_version": "2.3.2-2+b1",
+          "fixed_version_reported": null
+        }
+      ],
+      "vendor_source": "https://security-tracker.debian.org/tracker/CVE-2026-54369",
+      "prerequisite": "Privileged pathname-based libacl calls follow symlinks",
+      "mitigation_or_reachability": "No privileged ACL caller identified in the notes API; non-root and read-only root",
+      "scanner_decision": "still HIGH and blocking",
+      "patch_status": "No fixed version reported for the installed release in this scan; stable candidates inspected separately",
+      "not_a_vex_or_ignore_rule": true
+    },
+    {
+      "cve": "CVE-2026-76642",
+      "high_occurrences": 9,
+      "source_family": "util-linux",
+      "packages": [
+        {
+          "name": "bsdutils",
+          "installed_version": "1:2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "libblkid1",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "liblastlog2-2",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "libmount1",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "libsmartcols1",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "libuuid1",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "login",
+          "installed_version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "mount",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "util-linux",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        }
+      ],
+      "vendor_source": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+      "prerequisite": "Privileged post-mount hooks after a failed mount helper",
+      "mitigation_or_reachability": "Non-root, no effective capabilities, no-new-privileges; benign mount denied",
+      "scanner_decision": "still HIGH and blocking",
+      "patch_status": "No fixed version reported for the installed release in this scan; stable candidates inspected separately",
+      "not_a_vex_or_ignore_rule": true
+    },
+    {
+      "cve": "CVE-2026-78408",
+      "high_occurrences": 9,
+      "source_family": "util-linux",
+      "packages": [
+        {
+          "name": "bsdutils",
+          "installed_version": "1:2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "libblkid1",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "liblastlog2-2",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "libmount1",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "libsmartcols1",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "libuuid1",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "login",
+          "installed_version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "mount",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "util-linux",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        }
+      ],
+      "vendor_source": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+      "prerequisite": "Privileged nsenter --join-cgroup descriptor inheritance",
+      "mitigation_or_reachability": "No privileged namespace entry; no host PID namespace or Docker socket",
+      "scanner_decision": "still HIGH and blocking",
+      "patch_status": "No fixed version reported for the installed release in this scan; stable candidates inspected separately",
+      "not_a_vex_or_ignore_rule": true
+    },
+    {
+      "cve": "CVE-2026-78409",
+      "high_occurrences": 9,
+      "source_family": "util-linux",
+      "packages": [
+        {
+          "name": "bsdutils",
+          "installed_version": "1:2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "libblkid1",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "liblastlog2-2",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "libmount1",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "libsmartcols1",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "libuuid1",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "login",
+          "installed_version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "mount",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "util-linux",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        }
+      ],
+      "vendor_source": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+      "prerequisite": "X-mount.subdir intermediate symlink resolution",
+      "mitigation_or_reachability": "No authorized custom fstab mount path; no mounting capability",
+      "scanner_decision": "still HIGH and blocking",
+      "patch_status": "No fixed version reported for the installed release in this scan; stable candidates inspected separately",
+      "not_a_vex_or_ignore_rule": true
+    },
+    {
+      "cve": "CVE-2026-78410",
+      "high_occurrences": 9,
+      "source_family": "util-linux",
+      "packages": [
+        {
+          "name": "bsdutils",
+          "installed_version": "1:2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "libblkid1",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "liblastlog2-2",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "libmount1",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "libsmartcols1",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "libuuid1",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "login",
+          "installed_version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "mount",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        },
+        {
+          "name": "util-linux",
+          "installed_version": "2.41.5-0+deb13u1",
+          "fixed_version_reported": null
+        }
+      ],
+      "vendor_source": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+      "prerequisite": "Restricted bind-mount source redirection",
+      "mitigation_or_reachability": "No bind-mount privileges or privileged API mount operation",
+      "scanner_decision": "still HIGH and blocking",
+      "patch_status": "No fixed version reported for the installed release in this scan; stable candidates inspected separately",
+      "not_a_vex_or_ignore_rule": true
+    },
+    {
+      "cve": "CVE-2026-9538",
+      "high_occurrences": 1,
+      "source_family": "perl",
+      "packages": [
+        {
+          "name": "perl-base",
+          "installed_version": "5.40.1-6+deb13u1",
+          "fixed_version_reported": null
+        }
+      ],
+      "vendor_source": "https://security-tracker.debian.org/tracker/CVE-2026-9538",
+      "prerequisite": "Archive::Tar entry size can exhaust memory",
+      "mitigation_or_reachability": "Archive::Tar is not importable; no archive-upload route; resource limits",
+      "scanner_decision": "still HIGH and blocking",
+      "patch_status": "No fixed version reported for the installed release in this scan; stable candidates inspected separately",
+      "not_a_vex_or_ignore_rule": true
+    }
+  ],
+  "scope": "Source-package occurrence grouping, vendor review and benign runtime controls. No exploitation proof, no suppression, no severity change and no claim of patched binaries."
+}
