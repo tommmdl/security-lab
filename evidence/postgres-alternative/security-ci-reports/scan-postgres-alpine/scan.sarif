@@ -1,0 +1,27 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/main/sarif-2.1/schema/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "fullName": "Trivy Vulnerability Scanner",
+          "informationUri": "https://github.com/aquasecurity/trivy",
+          "name": "Trivy",
+          "rules": [],
+          "version": "0.76.0"
+        }
+      },
+      "results": [],
+      "columnKind": "utf16CodeUnits",
+      "properties": {
+        "imageID": "sha256:e44557abf3e37f154c8c7937d8583312b374d0a01069d6716234f8a4666dc6d5",
+        "imageName": "ghcr.io/tommmdl/docker-lab@sha256:8b6813ec76804698c33e4dac8f501ca8f641affcbd27cbc3b7dd6fdb02874fc3",
+        "repoDigests": [
+          "ghcr.io/tommmdl/docker-lab@sha256:8b6813ec76804698c33e4dac8f501ca8f641affcbd27cbc3b7dd6fdb02874fc3"
+        ],
+        "repoTags": null
+      }
+    }
+  ]
+}

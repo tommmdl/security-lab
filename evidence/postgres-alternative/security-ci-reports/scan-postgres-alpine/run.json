@@ -1,0 +1,22 @@
+{
+  "scanned_at_utc": "2026-10-19T00:48:05Z",
+  "target": {
+    "name": "postgres-alpine",
+    "image": "ghcr.io/tommmdl/docker-lab@sha256:8b6813ec76804698c33e4dac8f501ca8f641affcbd27cbc3b7dd6fdb02874fc3",
+    "context": "Tested isolated Alpine alternative; fixed libxml2; default Bookworm/Kubernetes databases remain unchanged"
+  },
+  "platform": "linux/amd64",
+  "trivy": {
+    "version": "0.76.0",
+    "asset": "trivy_0.76.0_Linux-64bit.tar.gz",
+    "sha256": "e24b1c51293c1b15e4ba8d45bbc7891ba053f90278ec2698f3562c993e145fe7",
+    "release_url": "https://github.com/aquasecurity/trivy/releases/tag/v0.76.0"
+  },
+  "database_metadata": {
+    "Version": 2,
+    "NextUpdate": "2026-10-19T18:32:29.177029595Z",
+    "UpdatedAt": "2026-10-18T18:32:29.177029985Z",
+    "DownloadedAt": "2026-10-19T00:48:01.170148356Z"
+  },
+  "report_sha256": "be385aae28d9b83eb41d78d731a9367a40ad24e96e27b83f8aea3123b26bf0e6"
+}
