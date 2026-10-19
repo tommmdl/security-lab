@@ -1,0 +1,27 @@
+{
+  "checks_passed": 20,
+  "checks": [
+    "Application role has no superuser, database/role creation, replication or RLS-bypass flags",
+    "Bootstrap superuser is separate from the application",
+    "Default statement timeout is 5 seconds",
+    "Idle transaction timeout is 10 seconds",
+    "Benign XML parsing remains reachable: residual libxml2 risk is not eliminated",
+    "Application cannot become the maintenance role",
+    "Application cannot become the bootstrap superuser",
+    "Application cannot read server files",
+    "Application cannot execute server-side commands",
+    "Application cannot create roles",
+    "Administrative role notes_admin is explicitly rejected over TCP",
+    "Administrative role notes_bootstrap is explicitly rejected over TCP",
+    "Long query is cancelled",
+    "XML-looking title stays literal text through the API",
+    "Security test note is deleted",
+    "Database memory is limited to 384 MiB",
+    "Database CPU is limited to one core",
+    "Database PID count is limited to 256",
+    "Database does not publish a host port",
+    "Database main process runs as UID 999"
+  ],
+  "residual_xml_parser_reachable": true,
+  "scope": "Privilege boundaries and resource limits; benign XML reachability, not a CVE exploit or patch verification."
+}

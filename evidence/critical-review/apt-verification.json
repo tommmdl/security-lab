@@ -1,0 +1,7 @@
+{
+  "image": "ghcr.io/tommmdl/docker-lab@sha256:be42c09595d7059956490eeab607b742afc96268db48f91f4eb1fd53edc89b52",
+  "apt_get_update_exit_code": 0,
+  "gpgv_retained": true,
+  "signature_checks_not_disabled": true,
+  "scope": "Disposable container after SQLite/GPG cleanup; configured repositories verified with normal apt-get update."
+}

@@ -1,0 +1,10 @@
+{
+  "published_postgres": "ghcr.io/tommmdl/docker-lab@sha256:be42c09595d7059956490eeab607b742afc96268db48f91f4eb1fd53edc89b52",
+  "linux_amd64_manifest": "sha256:be42c09595d7059956490eeab607b742afc96268db48f91f4eb1fd53edc89b52",
+  "tested_postgres_config_id": "sha256:811679b216ab41fca8d81171311ca76ec5aa7efe103cf01d365073655be16dd3",
+  "registry_config_digest": "sha256:811679b216ab41fca8d81171311ca76ec5aa7efe103cf01d365073655be16dd3",
+  "same_tested_config": true,
+  "manifest_hashes_verified": true,
+  "local_docker_inspect_id": "sha256:be42c09595d7059956490eeab607b742afc96268db48f91f4eb1fd53edc89b52",
+  "note": "Registry config digest is compared to the CI tested-image ID; the local containerd image store reports a different inspect ID for this OCI index."
+}

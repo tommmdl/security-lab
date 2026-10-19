@@ -1,0 +1,22 @@
+{
+  "scanned_at_utc": "2026-10-19T00:26:24Z",
+  "target": {
+    "name": "postgres",
+    "image": "ghcr.io/tommmdl/docker-lab@sha256:be42c09595d7059956490eeab607b742afc96268db48f91f4eb1fd53edc89b52",
+    "context": "PostgreSQL 17.11 / Bookworm; rebuilt gosu, SQLite/GPG removed, separate app role"
+  },
+  "platform": "linux/amd64",
+  "trivy": {
+    "version": "0.76.0",
+    "asset": "trivy_0.76.0_Linux-64bit.tar.gz",
+    "sha256": "e24b1c51293c1b15e4ba8d45bbc7891ba053f90278ec2698f3562c993e145fe7",
+    "release_url": "https://github.com/aquasecurity/trivy/releases/tag/v0.76.0"
+  },
+  "database_metadata": {
+    "Version": 2,
+    "NextUpdate": "2026-10-19T18:32:29.177029595Z",
+    "UpdatedAt": "2026-10-18T18:32:29.177029985Z",
+    "DownloadedAt": "2026-10-19T00:26:20.287542815Z"
+  },
+  "report_sha256": "6058ae50f9450b88b620d5ef19d039142635c54cc97df166f41e91c2536fb7e4"
+}

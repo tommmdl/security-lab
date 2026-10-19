@@ -1,0 +1,38 @@
+{
+  "executed_at_utc": "2026-10-19T00:26:53Z",
+  "checks_passed": 24,
+  "checks": [
+    "Dedicated kind context selected",
+    "Both kind nodes Ready",
+    "Two API replicas available",
+    "Schema Job completed before application startup",
+    "PostgreSQL claim Bound",
+    "Liveness returns 200",
+    "Readiness verifies application database",
+    "Web page served through the NodePort mapping",
+    "Invalid note rejected",
+    "Create note returns 201",
+    "Created note readable through Service",
+    "Deployment replaces a deleted API Pod",
+    "Note remains after API Pod replacement",
+    "Application scales to three ready replicas",
+    "Applying manifest restores two replicas",
+    "StatefulSet replaces PostgreSQL Pod",
+    "PersistentVolumeClaim identity preserved",
+    "Note survives PostgreSQL Pod replacement",
+    "Invalid image produces an observable pull error",
+    "Previous replicas remain available during failed rollout",
+    "Rollback restores the pinned working image",
+    "Note remains readable after rollback",
+    "Remove only the test note",
+    "Deleted test note returns 404"
+  ],
+  "observations": {
+    "failed_update_reason": "ErrImagePull",
+    "api_replicas": 2,
+    "database_claim": "Bound",
+    "api_image": "ghcr.io/tommmdl/docker-lab@sha256:343f2b23294c09bea9c3250a3b3fd1f95d817acea9db0231dfaaaf406f22fbac",
+    "node_count": 2
+  },
+  "final_state": "Dedicated cluster running; API has two replicas; test note removed"
+}

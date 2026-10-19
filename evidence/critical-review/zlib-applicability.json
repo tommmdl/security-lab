@@ -5,5 +5,8 @@
   "affected_exported_symbol_present": false,
   "minizip_package_or_named_file_found": false,
   "vendor": "Debian Bookworm zlib binaries do not build contrib/minizip",
-  "assessment": "CVE-2023-45853 code not present in inspected packaged library; scanner finding retained. This targeted inspection is not a proof that every possible embedded third-party binary is unaffected."
+  "assessment": "CVE-2023-45853 code not present in inspected packaged library; scanner finding retained. This targeted inspection is not a proof that every possible embedded third-party binary is unaffected.",
+  "updated_image": "ghcr.io/tommmdl/docker-lab@sha256:be42c09595d7059956490eeab607b742afc96268db48f91f4eb1fd53edc89b52",
+  "updated_library_sha256": "7e2a72b4c4b38c61e6962de6e3f4a5e9ae692e732c68deead10a7ce2135a7f68",
+  "library_unchanged_after_package_purge": true
 }

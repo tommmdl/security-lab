@@ -45,3 +45,13 @@ Fresh databases run the image hook. Existing volumes need an explicit migration 
 The **20 security checks** exercise real privilege denials, admin TCP rejection, timeouts, limits and residual XML reachability. The **23 integration checks** cover API behavior and persistence. The upgrade test creates three notes in the previous image, replaces it on the same volume, migrates roles, terminates a held privileged session and compares every note field. The login is preserved and repeated hardening is tested. It removes only its own temporary environment.
 
 JSON records and inspections live under [critical-review](../evidence/critical-review/). The gate still blocks **68 HIGH and 2 CRITICAL** findings. Removing SQLite, mitigating libxml2 exposure and assessing zlib applicability are different outcomes; none is presented as a clean security scan.
+
+## Published image and running labs
+
+[Publication](https://github.com/tommmdl/github-actions-lab/actions/runs/39180376123) passed the API, security and upgrade checks before pushing the tested image. A direct registry scan reproduced 350 findings, including two critical findings. Registry manifest hashes and the linux/amd64 config digest were also checked against the CI-tested image ID. Normal apt signature verification still works after GPG cleanup; the shipped libz checksum is unchanged.
+
+The Compose lab, GHCR demo and Argo CD application now use the new database image and ordinary application role. Checks passed on both Compose environments (20 each) and on the Kubernetes SQL/API boundaries (15). Readiness returns 200 on ports 8000, 8001 and 8005. Argo CD is Synced/Healthy with the same PVC and volume. Live databases had zero notes at migration time; the separate upgrade test validates preservation with three controlled notes.
+
+[Kubernetes CI passed 24 checks](https://github.com/tommmdl/kubernetes-lab/actions/runs/39180681297), and [tracing CI passed 19](https://github.com/tommmdl/tracing-lab/actions/runs/39180684915) with the new database setup. Nineteen tracing checks also passed against the running cluster after role migration. Records live beside the reports as `deployment-checks.json`, `live-*-security.json`, `*-ci-tests.json` and `tracing-tests.json`.
+
+[Security CI](https://github.com/tommmdl/security-lab/actions/runs/39180741581) passed all 15 policy/configuration checks and correctly blocked both images. PostgreSQL still has 68 HIGH / 2 CRITICAL findings; the unchanged API still has 44 HIGH. Publication and the separate security approval gate remain distinct: a published remediation image is not an approved security result.
