@@ -4,7 +4,7 @@
 
 Os outros laboratórios mostram a aplicação funcionando. Aqui a pergunta muda: o que existe dentro da imagem que merece atenção antes de ela seguir no pipeline?
 
-O Trivy analisa três imagens por digest: a API básica, o PostgreSQL Alpine ativo nos labs e o Bookworm guardado para recuperação. O GitHub Actions guarda os relatórios e bloqueia a etapa se a política encontrar ocorrências HIGH ou CRITICAL, inclusive sem correção publicada.
+O Trivy acompanha cinco imagens por digest: a API Debian, o PostgreSQL Alpine ativo, o Bookworm guardado para recuperação e as duas candidatas da API Alpine, básica e instrumentada. O GitHub Actions guarda os relatórios e bloqueia a etapa se a política encontrar ocorrências HIGH ou CRITICAL, inclusive sem correção publicada.
 
 ## Uma alternativa Alpine para a API, testada em separado
 
@@ -50,6 +50,8 @@ python3 tests/verify.py
 python3 scripts/scan.py notes-api
 python3 scripts/scan.py postgres
 python3 scripts/scan.py postgres-bookworm
+python3 scripts/scan.py notes-api-alpine
+python3 scripts/scan.py notes-api-alpine-otel
 ```
 
 Cada comando de scan pode encerrar com código 1 porque a imagem foi bloqueada. Execute os alvos separadamente ou use terminais separados; não coloque `|| true` num pipeline de aprovação. O cache local do Trivy pode serializar acessos concorrentes.

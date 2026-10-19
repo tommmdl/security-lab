@@ -1,0 +1,17 @@
+{
+  "docker": {
+    "uid": 10001,
+    "gid": 10001,
+    "capabilities": "0000000000000000",
+    "no_new_privileges": "1",
+    "seccomp": "2"
+  },
+  "kubernetes": {
+    "uid": 10001,
+    "gid": 10001,
+    "capabilities": "0000000000000000",
+    "no_new_privileges": "1",
+    "seccomp": "2"
+  },
+  "scope": "Actual published candidate API processes, not just manifest declarations."
+}

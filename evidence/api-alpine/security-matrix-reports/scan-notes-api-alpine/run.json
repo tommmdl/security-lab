@@ -1,0 +1,22 @@
+{
+  "scanned_at_utc": "2026-10-19T13:34:35Z",
+  "target": {
+    "name": "notes-api-alpine",
+    "image": "ghcr.io/tommmdl/docker-lab@sha256:ae2e93fdbab7bc912897e6524b3e17b982e97cfb29bcb4fc36d9c014d615eb91",
+    "context": "Experimental basic Alpine API; isolated preview, primary Debian API still blocked"
+  },
+  "platform": "linux/amd64",
+  "trivy": {
+    "version": "0.76.0",
+    "asset": "trivy_0.76.0_Linux-64bit.tar.gz",
+    "sha256": "e24b1c51293c1b15e4ba8d45bbc7891ba053f90278ec2698f3562c993e145fe7",
+    "release_url": "https://github.com/aquasecurity/trivy/releases/tag/v0.76.0"
+  },
+  "database_metadata": {
+    "Version": 2,
+    "NextUpdate": "2026-10-20T07:19:54.30859309Z",
+    "UpdatedAt": "2026-10-19T07:19:54.308593453Z",
+    "DownloadedAt": "2026-10-19T13:34:35.207923774Z"
+  },
+  "report_sha256": "63f7575cf3413f1e7b057129a2931d7a4b3bd318054895d2d1e913a03d384a3a"
+}
