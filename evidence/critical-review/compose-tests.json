@@ -1,0 +1,30 @@
+{
+  "executed_at_utc": "2026-10-19T00:18:31Z",
+  "passed": 23,
+  "checks": [
+    "web page served with Portuguese and English strings",
+    "liveness returns 200",
+    "readiness verifies database and schema",
+    "rejects invalid title: {}",
+    "rejects invalid title: {'title': ''}",
+    "rejects invalid title: {'title': ' '}",
+    "rejects invalid title: {'title': 123}",
+    "rejects invalid title: []",
+    "rejects invalid title: {'title': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "rejects oversized request",
+    "unknown route returns JSON 404",
+    "create returns 201 and ID",
+    "created note is readable",
+    "SQL-like input stored as literal data",
+    "delete SQL-like test note",
+    "table remains readable",
+    "data survives container recreation",
+    "liveness remains 200 during DB outage",
+    "readiness returns 503 during DB outage",
+    "data endpoint returns 503 during DB outage",
+    "API recovers without restart",
+    "delete persistence test note",
+    "delete missing note returns 404"
+  ],
+  "scope": "Local Docker lab; lifecycle tests recreate containers and stop the database."
+}

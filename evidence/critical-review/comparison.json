@@ -1,0 +1,66 @@
+{
+  "recorded_at_utc": "2026-10-19T00:22:12Z",
+  "scanner": "Trivy 0.76.0",
+  "database": {
+    "Version": 2,
+    "NextUpdate": "2026-10-19T18:32:29.177029595Z",
+    "UpdatedAt": "2026-10-18T18:32:29.177029985Z",
+    "DownloadedAt": "2026-10-18T22:34:48.050436036Z"
+  },
+  "before_report": "evidence/remediation/postgres-published.json",
+  "before": {
+    "total": 412,
+    "severity_counts": {
+      "LOW": 170,
+      "HIGH": 71,
+      "MEDIUM": 164,
+      "UNKNOWN": 4,
+      "CRITICAL": 3
+    },
+    "critical": [
+      {
+        "id": "CVE-2025-7458",
+        "package": "libsqlite3-0",
+        "status": "affected"
+      },
+      {
+        "id": "CVE-2026-6653",
+        "package": "libxml2",
+        "status": "fix_deferred"
+      },
+      {
+        "id": "CVE-2023-45853",
+        "package": "zlib1g",
+        "status": "will_not_fix"
+      }
+    ]
+  },
+  "after_report": "evidence/critical-review/postgres-after.json",
+  "after": {
+    "total": 350,
+    "severity_counts": {
+      "LOW": 136,
+      "HIGH": 68,
+      "MEDIUM": 140,
+      "UNKNOWN": 4,
+      "CRITICAL": 2
+    },
+    "critical": [
+      {
+        "id": "CVE-2026-6653",
+        "package": "libxml2",
+        "status": "fix_deferred"
+      },
+      {
+        "id": "CVE-2023-45853",
+        "package": "zlib1g",
+        "status": "will_not_fix"
+      }
+    ]
+  },
+  "after_image_id": "sha256:08664677f14b29d4113bc9a28fe6f25f8522acc092c71a9d5a11e53652984c20",
+  "after_report_sha256": "4722e87e9fc20388be16e17abd77a4cd02fa7decc07d2c591507aabb4fce6d72",
+  "ignore_list_changed": false,
+  "blocking_policy_changed": false,
+  "suppressed_cves": []
+}

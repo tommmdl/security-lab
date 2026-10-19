@@ -6,6 +6,10 @@ Other labs show the application working. This one asks a different question: wha
 
 Trivy scans two real portfolio images by digest: the basic docker-lab API and the PostgreSQL image used by Kubernetes lab. GitHub Actions preserves reports and blocks HIGH or CRITICAL findings, including those without a published fix.
 
+## Review of the remaining PostgreSQL critical findings
+
+SQLite and unused GPG tools were removed from the published image. PostgreSQL goes from 412 to **350 findings**, with **68 HIGH and 2 CRITICAL** remaining. libxml2 has compensating controls and remains affected; Debian's zlib binary does not build the affected MiniZip code, but the scanner finding stays visible and blocking. See the [analysis, sources and complete evidence](docs/postgresql-critical.en.md).
+
 ## After the first remediation round
 
 The API went from 173 to 164 findings; PostgreSQL went from 472 to 412. No finding has a published fix in this database snapshot. **44 HIGH findings remain in the API, and 71 HIGH + 3 CRITICAL remain in the database**, so both images are still blocked. The [full reports and comparison](docs/remediation.en.md) show what changed and what still needs attention.

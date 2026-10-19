@@ -1,0 +1,14 @@
+{
+  "source_image": "ghcr.io/tommmdl/docker-lab@sha256:3150abf7b42612192bce29be02c49880eb17f0f97c93b5527a58ae7454e97dec",
+  "target_image": "docker-lab-postgres:local",
+  "seeded_rows": 3,
+  "same_volume": true,
+  "all_note_fields_preserved": true,
+  "application_login_preserved": true,
+  "application_role_was_superuser_before": true,
+  "application_role_is_superuser_after": false,
+  "repeated_hardening_passed": true,
+  "old_bootstrap_session_terminated": true,
+  "security_checks_passed": 20,
+  "scope": "Disposable legacy database upgraded in place, including bootstrap-role separation and identity sequence ownership. Test containers and volume are removed."
+}

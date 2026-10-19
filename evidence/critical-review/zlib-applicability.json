@@ -1,0 +1,9 @@
+{
+  "image": "ghcr.io/tommmdl/docker-lab@sha256:3150abf7b42612192bce29be02c49880eb17f0f97c93b5527a58ae7454e97dec",
+  "zlib_path": "/lib/x86_64-linux-gnu/libz.so.1.2.13",
+  "zlib_sha256": "7e2a72b4c4b38c61e6962de6e3f4a5e9ae692e732c68deead10a7ce2135a7f68",
+  "affected_exported_symbol_present": false,
+  "minizip_package_or_named_file_found": false,
+  "vendor": "Debian Bookworm zlib binaries do not build contrib/minizip",
+  "assessment": "CVE-2023-45853 code not present in inspected packaged library; scanner finding retained. This targeted inspection is not a proof that every possible embedded third-party binary is unaffected."
+}

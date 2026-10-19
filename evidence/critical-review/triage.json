@@ -1,0 +1,23 @@
+{
+  "CVE-2025-7458": {
+    "package": "libsqlite3-0",
+    "vendor_status": "Bookworm affected; no-dsa/minor issue",
+    "action": "Removed unused SQLite and GPG key-management packages; gpgv retained",
+    "scanner_after": "absent because package is uninstalled",
+    "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2025-7458"
+  },
+  "CVE-2026-6653": {
+    "package": "libxml2",
+    "vendor_status": "Bookworm affected; postponed/minor issue",
+    "action": "Reduced application SQL privileges; constrained resources; parser remains reachable",
+    "scanner_after": "CRITICAL; block retained",
+    "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-6653"
+  },
+  "CVE-2023-45853": {
+    "package": "zlib1g",
+    "vendor_status": "Bookworm binary does not build affected contrib/minizip code",
+    "action": "Corroborated vendor applicability with package inventory and dynamic symbols; no scanner suppression",
+    "scanner_after": "CRITICAL; block retained",
+    "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2023-45853"
+  }
+}

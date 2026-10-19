@@ -6,6 +6,10 @@ Os outros laboratórios mostram a aplicação funcionando. Aqui a pergunta muda:
 
 O Trivy analisa duas imagens reais do portfólio por digest: a API básica do docker-lab e o PostgreSQL usado no Kubernetes lab. O GitHub Actions guarda os relatórios e bloqueia a etapa se a política encontrar ocorrências HIGH ou CRITICAL, inclusive sem correção publicada.
 
+## Análise dos críticos restantes do PostgreSQL
+
+SQLite e ferramentas GPG sem uso foram removidos da imagem publicada. O PostgreSQL passa de 412 para **350 achados**, com **68 HIGH e 2 CRITICAL** restantes. A libxml2 recebe controles compensatórios e continua afetada; o binário zlib do Debian não compila o MiniZip afetado, mas o alerta continua visível e bloqueando. Veja a [análise, as fontes e as evidências completas](docs/postgresql-critical.md).
+
 ## Depois da primeira rodada de correções
 
 A API passou de 173 para 164 achados; o PostgreSQL, de 472 para 412. Não restaram achados com correção indicada nessa fotografia da base. Ainda há **44 HIGH na API e 71 HIGH + 3 CRITICAL no banco**, por isso as duas imagens continuam bloqueadas. Os [relatórios completos e a comparação](docs/remediation.md) mostram o que mudou e o que falta tratar.

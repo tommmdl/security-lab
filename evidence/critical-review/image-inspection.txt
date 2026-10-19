@@ -1,0 +1,81 @@
+libsqlite3-0
+Reverse Depends:
+  gpg
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages will be REMOVED:
+  dirmngr* gnupg* gnupg-l10n* gnupg-utils* gpg* gpg-agent* gpg-wks-client*
+  gpg-wks-server* gpgconf* gpgsm* libassuan0* libksba8* libncursesw6*
+  libnpth0* libsqlite3-0* pinentry-curses*
+0 upgraded, 0 newly installed, 16 to remove and 0 not upgraded.
+Purg gnupg [2.2.40-1.1+deb12u2]
+Purg gpg-wks-client [2.2.40-1.1+deb12u2]
+Purg dirmngr [2.2.40-1.1+deb12u2]
+Purg gnupg-l10n [2.2.40-1.1+deb12u2]
+Purg gnupg-utils [2.2.40-1.1+deb12u2]
+Purg gpg-wks-server [2.2.40-1.1+deb12u2]
+Purg gpg [2.2.40-1.1+deb12u2]
+Purg gpg-agent [2.2.40-1.1+deb12u2]
+Purg gpgsm [2.2.40-1.1+deb12u2]
+Purg gpgconf [2.2.40-1.1+deb12u2]
+Purg pinentry-curses [1.2.1-1]
+Purg libassuan0 [2.5.5-5]
+Purg libksba8 [1.6.3-2]
+Purg libncursesw6 [6.4-4]
+Purg libnpth0 [1.6-3]
+Purg libsqlite3-0 [3.40.1-2+deb12u2]
+/.
+/lib
+/lib/x86_64-linux-gnu
+/lib/x86_64-linux-gnu/libz.so.1.2.13
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/zlib1g
+/usr/share/doc/zlib1g/changelog.Debian.gz
+/usr/share/doc/zlib1g/changelog.gz
+/usr/share/doc/zlib1g/copyright
+/lib/x86_64-linux-gnu/libz.so.1
+	linux-vdso.so.1 (0x00007c83371d5000)
+	libzstd.so.1 => /lib/x86_64-linux-gnu/libzstd.so.1 (0x00007c8336745000)
+	liblz4.so.1 => /lib/x86_64-linux-gnu/liblz4.so.1 (0x00007c833671f000)
+	libxml2.so.2 => /lib/x86_64-linux-gnu/libxml2.so.2 (0x00007c8336573000)
+	libpam.so.0 => /lib/x86_64-linux-gnu/libpam.so.0 (0x00007c8336561000)
+	libssl.so.3 => /lib/x86_64-linux-gnu/libssl.so.3 (0x00007c83364b8000)
+	libcrypto.so.3 => /lib/x86_64-linux-gnu/libcrypto.so.3 (0x00007c833602c000)
+	libgssapi_krb5.so.2 => /lib/x86_64-linux-gnu/libgssapi_krb5.so.2 (0x00007c8335fd9000)
+	libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007c8335fba000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007c8335eda000)
+	libldap-2.5.so.0 => /lib/x86_64-linux-gnu/libldap-2.5.so.0 (0x00007c8335e7b000)
+	libicui18n.so.72 => /lib/x86_64-linux-gnu/libicui18n.so.72 (0x00007c8335b51000)
+	libicuuc.so.72 => /lib/x86_64-linux-gnu/libicuuc.so.72 (0x00007c8335951000)
+	libsystemd.so.0 => /lib/x86_64-linux-gnu/libsystemd.so.0 (0x00007c8335881000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007c833569f000)
+	liblzma.so.5 => /lib/x86_64-linux-gnu/liblzma.so.5 (0x00007c8335670000)
+	libaudit.so.1 => /lib/x86_64-linux-gnu/libaudit.so.1 (0x00007c833563f000)
+	libkrb5.so.3 => /lib/x86_64-linux-gnu/libkrb5.so.3 (0x00007c8335563000)
+	libk5crypto.so.3 => /lib/x86_64-linux-gnu/libk5crypto.so.3 (0x00007c8335536000)
+	libcom_err.so.2 => /lib/x86_64-linux-gnu/libcom_err.so.2 (0x00007c8335530000)
+	libkrb5support.so.0 => /lib/x86_64-linux-gnu/libkrb5support.so.0 (0x00007c8335522000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007c83371d7000)
+	liblber-2.5.so.0 => /lib/x86_64-linux-gnu/liblber-2.5.so.0 (0x00007c8335512000)
+	libsasl2.so.2 => /lib/x86_64-linux-gnu/libsasl2.so.2 (0x00007c83354f3000)
+	libgnutls.so.30 => /lib/x86_64-linux-gnu/libgnutls.so.30 (0x00007c83352d4000)
+	libstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007c83350ba000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007c833509a000)
+	libicudata.so.72 => /lib/x86_64-linux-gnu/libicudata.so.72 (0x00007c83332c8000)
+	libcap.so.2 => /lib/x86_64-linux-gnu/libcap.so.2 (0x00007c83332bc000)
+	libgcrypt.so.20 => /lib/x86_64-linux-gnu/libgcrypt.so.20 (0x00007c8333173000)
+	libcap-ng.so.0 => /lib/x86_64-linux-gnu/libcap-ng.so.0 (0x00007c833316b000)
+	libkeyutils.so.1 => /lib/x86_64-linux-gnu/libkeyutils.so.1 (0x00007c8333164000)
+	libresolv.so.2 => /lib/x86_64-linux-gnu/libresolv.so.2 (0x00007c8333153000)
+	libp11-kit.so.0 => /lib/x86_64-linux-gnu/libp11-kit.so.0 (0x00007c833301f000)
+	libidn2.so.0 => /lib/x86_64-linux-gnu/libidn2.so.0 (0x00007c8332fec000)
+	libunistring.so.2 => /lib/x86_64-linux-gnu/libunistring.so.2 (0x00007c8332e36000)
+	libtasn1.so.6 => /lib/x86_64-linux-gnu/libtasn1.so.6 (0x00007c8332e21000)
+	libnettle.so.8 => /lib/x86_64-linux-gnu/libnettle.so.8 (0x00007c8332dd3000)
+	libhogweed.so.6 => /lib/x86_64-linux-gnu/libhogweed.so.6 (0x00007c8332d8a000)
+	libgmp.so.10 => /lib/x86_64-linux-gnu/libgmp.so.10 (0x00007c8332d09000)
+	libgpg-error.so.0 => /lib/x86_64-linux-gnu/libgpg-error.so.0 (0x00007c8332cdf000)
+	libffi.so.8 => /lib/x86_64-linux-gnu/libffi.so.8 (0x00007c8332cd3000)
