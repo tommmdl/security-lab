@@ -1,0 +1,22 @@
+{
+  "scanned_at_utc": "2026-10-19T16:36:47Z",
+  "target": {
+    "name": "notes-api-otel",
+    "image": "ghcr.io/tommmdl/docker-lab@sha256:e01c467c0987cc2d999778a4e9ee429bee1d6af4bcdef80e38ce620b95a0b8da",
+    "context": "Adopted Alpine OpenTelemetry API: primary Kubernetes/Argo CD tracing workload"
+  },
+  "platform": "linux/amd64",
+  "trivy": {
+    "version": "0.76.0",
+    "asset": "trivy_0.76.0_Linux-64bit.tar.gz",
+    "sha256": "e24b1c51293c1b15e4ba8d45bbc7891ba053f90278ec2698f3562c993e145fe7",
+    "release_url": "https://github.com/aquasecurity/trivy/releases/tag/v0.76.0"
+  },
+  "database_metadata": {
+    "Version": 2,
+    "NextUpdate": "2026-10-19T18:32:29.177029595Z",
+    "UpdatedAt": "2026-10-18T18:32:29.177029985Z",
+    "DownloadedAt": "2026-10-18T22:34:48.050436036Z"
+  },
+  "report_sha256": "c2fc28ddde01b6f4eedeceaaae0725ac29d2cb4bca493fcd016798b2c7e0e9d4"
+}

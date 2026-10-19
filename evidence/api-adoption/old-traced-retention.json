@@ -1,0 +1,7 @@
+{
+  "retained_image": "tracing-lab-api:otel-c5d4e188167922bd",
+  "private_archive_sha256": "269af6408ed9b4b889bbcc9c70e23829f9e3f91b1f2db014c2aa456082b92ce8",
+  "archive_bytes": 63830528,
+  "archive_published": false,
+  "scope": "Offline retention of the original local tracing image; actual rollback is verified against the running cluster image."
+}

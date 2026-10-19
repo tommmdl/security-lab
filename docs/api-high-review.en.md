@@ -2,6 +2,8 @@
 
 English · [Português](api-high-review.md)
 
+This is the historical Debian review. The active API is now Alpine; the affected image is retained as `notes-api-debian`. [Current adoption](api-adoption.en.md).
+
 A new full scan of image `sha256:343f2b23294c09bea9c3250a3b3fd1f95d817acea9db0231dfaaaf406f22fbac` confirmed **164 findings, including 44 HIGH occurrences across eight distinct CVEs**. These are package/CVE occurrences: the same util-linux source issue is reported against several binary packages. None of these HIGH findings was attributed to Flask, Gunicorn or Psycopg in this snapshot.
 
 The decision remains **block**. We did not change severities, ignorefile, policy, dpkg metadata or historical reports. This round limits exposure and impact; it does not patch the affected Debian binaries or approve the image.
@@ -44,7 +46,7 @@ Resource limits contain excessive consumption without guaranteeing availability 
 `tests/api_runtime.py` checks real Docker and Kubernetes processes, cgroup values, read-only rootfs enforcement, denied mount/nsenter operations, absent systemd-homed/Archive::Tar and HTTP 413 rejection above 4 KiB. It does not use an exploit payload, malformed terminfo or memory bomb.
 
 ```bash
-python3 scripts/scan.py notes-api     # expected exit 1: blocked
+python3 scripts/scan.py notes-api-debian     # expected exit 1: blocked
 python3 scripts/triage-api.py
 python3 tests/api_runtime.py          # requires sibling checkouts and both running labs
 ```

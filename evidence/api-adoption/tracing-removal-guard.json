@@ -1,0 +1,6 @@
+{
+  "refused_with_active_exporters": true,
+  "message": "Restore/stop these traced workloads before removing tracing-lab: notes-api, notes-api-alpine",
+  "deletion_commands_executed": false,
+  "scope": "Only the read-only guard was executed; no tracing infrastructure deletion was attempted."
+}

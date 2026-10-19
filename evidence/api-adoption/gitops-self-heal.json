@@ -1,0 +1,18 @@
+{
+  "self_heal_off": {
+    "status": "OutOfSync",
+    "replicas": 3,
+    "observation_seconds": 30
+  },
+  "self_heal_on": {
+    "status": "Synced",
+    "health": "Healthy",
+    "replicas": 2
+  },
+  "second_drift_corrected": true,
+  "pvc_preserved": true,
+  "note_preserved": true,
+  "source_revision": "c46b4c37728ece7592fd1011cfa7b5196430aea7",
+  "argocd_version": "v3.5.5",
+  "executed_at": "2026-10-19T16:37:23Z"
+}

@@ -1,0 +1,422 @@
+{
+  "decision": "block",
+  "policy": {
+    "version": 1,
+    "block_severities": [
+      "HIGH",
+      "CRITICAL"
+    ],
+    "include_unfixed": true,
+    "block_end_of_life_os": true,
+    "require_package_inventory": true
+  },
+  "artifact": "tracing-lab-api:otel-c5d4e188167922bd",
+  "severity_counts": {
+    "LOW": 61,
+    "HIGH": 44,
+    "MEDIUM": 58,
+    "UNKNOWN": 1
+  },
+  "finding_count": 164,
+  "blocking_count": 44,
+  "blocking_without_fix": 44,
+  "os_end_of_life": false,
+  "blocking_findings": [
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-76642",
+      "package": "bsdutils",
+      "installed": "1:2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78408",
+      "package": "bsdutils",
+      "installed": "1:2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78409",
+      "package": "bsdutils",
+      "installed": "1:2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78410",
+      "package": "bsdutils",
+      "installed": "1:2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-54369",
+      "package": "libacl1",
+      "installed": "2.3.2-2+b1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-76642",
+      "package": "libblkid1",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78408",
+      "package": "libblkid1",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78409",
+      "package": "libblkid1",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78410",
+      "package": "libblkid1",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-76642",
+      "package": "liblastlog2-2",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78408",
+      "package": "liblastlog2-2",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78409",
+      "package": "liblastlog2-2",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78410",
+      "package": "liblastlog2-2",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-76642",
+      "package": "libmount1",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78408",
+      "package": "libmount1",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78409",
+      "package": "libmount1",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78410",
+      "package": "libmount1",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2025-69720",
+      "package": "libncursesw6",
+      "installed": "6.5+20250216-2",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-76642",
+      "package": "libsmartcols1",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78408",
+      "package": "libsmartcols1",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78409",
+      "package": "libsmartcols1",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78410",
+      "package": "libsmartcols1",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-16742",
+      "package": "libsystemd0",
+      "installed": "257.13-1~deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2025-69720",
+      "package": "libtinfo6",
+      "installed": "6.5+20250216-2",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-16742",
+      "package": "libudev1",
+      "installed": "257.13-1~deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-76642",
+      "package": "libuuid1",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78408",
+      "package": "libuuid1",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78409",
+      "package": "libuuid1",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78410",
+      "package": "libuuid1",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-76642",
+      "package": "login",
+      "installed": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78408",
+      "package": "login",
+      "installed": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78409",
+      "package": "login",
+      "installed": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78410",
+      "package": "login",
+      "installed": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-76642",
+      "package": "mount",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78408",
+      "package": "mount",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78409",
+      "package": "mount",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78410",
+      "package": "mount",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2025-69720",
+      "package": "ncurses-base",
+      "installed": "6.5+20250216-2",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2025-69720",
+      "package": "ncurses-bin",
+      "installed": "6.5+20250216-2",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-9538",
+      "package": "perl-base",
+      "installed": "5.40.1-6+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "fix_deferred"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-76642",
+      "package": "util-linux",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78408",
+      "package": "util-linux",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78409",
+      "package": "util-linux",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    },
+    {
+      "target": "tracing-lab-api:otel-c5d4e188167922bd (debian 13.7)",
+      "id": "CVE-2026-78410",
+      "package": "util-linux",
+      "installed": "2.41.5-0+deb13u1",
+      "fixed": "",
+      "severity": "HIGH",
+      "status": "affected"
+    }
+  ]
+}

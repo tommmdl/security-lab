@@ -2,6 +2,8 @@
 
 English · [Português](api-alpine.md)
 
+This page records the earlier isolated experiment. Alpine has now been adopted in the main labs: [current deployment and rollback](api-adoption.en.md).
+
 The alternative retains **Python 3.13.16 and the same application lock**, replacing Debian/glibc with Alpine 3.24.2/musl. We built a basic API image and an OpenTelemetry derivative. Both recorded **zero findings in full local scans**. The primary Debian API remains on its earlier image, with all 44 HIGH findings visible and blocking.
 
 This is a separate test. Docker uses its own project, port and volume; Kubernetes uses another Deployment, Service, database and PVC. The primary Service does not select candidate Pods. Main volumes are never mounted into candidates, and the primary Argo CD application source is unchanged.

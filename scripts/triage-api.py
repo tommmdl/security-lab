@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Group the complete API report without editing or suppressing any finding."""
-import collections,json,hashlib
+import collections,json,hashlib,sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-report=ROOT/'.local/reports/notes-api/scan.json'
+report=Path(sys.argv[1]) if len(sys.argv)>1 else ROOT/'evidence/api-high-review/after-scan.json'
 d=json.loads(report.read_text());groups=collections.defaultdict(list)
 for result in d['Results']:
  for v in result.get('Vulnerabilities') or []:

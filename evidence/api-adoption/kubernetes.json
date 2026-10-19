@@ -1,0 +1,28 @@
+{
+  "executed_at_utc": "2026-10-19T16:35:44Z",
+  "checks_passed": 6,
+  "checks": [
+    "Logical backup restored separately with identical rows, columns, indexes and sequence",
+    "Basic API: post-cutover note preserved on Debian rollback and return to Alpine",
+    "Instrumented API: post-cutover note preserved on actual original-image rollback",
+    "Original OpenTelemetry image passes all 19 tracing checks on rollback",
+    "Published Alpine OpenTelemetry image passes all 19 tracing checks after return",
+    "Original data, schema, indexes, PostgreSQL image and PVC preserved"
+  ],
+  "source_rows": 0,
+  "backup_sha256": "562ef370c6ac328d3f3515ebe8e2ad4c2774ff2b6f812953e7f9c286ce2b7dac",
+  "backup_restore_verified": true,
+  "all_original_note_fields_preserved": true,
+  "schema_and_indexes_unchanged": true,
+  "identity_sequence_not_rewound": true,
+  "database_image_and_volume_unchanged": true,
+  "basic_image": "ghcr.io/tommmdl/docker-lab@sha256:ae2e93fdbab7bc912897e6524b3e17b982e97cfb29bcb4fc36d9c014d615eb91",
+  "active_image": "ghcr.io/tommmdl/docker-lab@sha256:e01c467c0987cc2d999778a4e9ee429bee1d6af4bcdef80e38ce620b95a0b8da",
+  "original_traced_image": "tracing-lab-api:otel-c5d4e188167922bd",
+  "pvc_uid_preserved": true,
+  "rollback_notes_removed": true,
+  "resumed_after_transient_get_timeout": true,
+  "retry_policy": "GET only; POST writes were not repeated",
+  "argocd_automation": "Paused until Git publication",
+  "scope": "API image changes only; actual rollback serves a post-cutover note from the same database. Private logical backups restored separately as a recovery check; never restored over live notes."
+}

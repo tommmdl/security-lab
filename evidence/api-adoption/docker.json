@@ -1,0 +1,22 @@
+{
+  "executed_at_utc": "2026-10-19T16:32:17Z",
+  "checks_passed": 5,
+  "checks": [
+    "Logical backup restored in a separate check database with identical rows, schema, indexes and sequence",
+    "Alpine basic API serves the existing database without replacing its container or volume",
+    "Actual Debian image rollback preserves every field of the note written after Alpine cutover",
+    "Return to the adopted Alpine digest still serves the same post-cutover note",
+    "Database container identity, image and mounts remain identical; original data/schema and sequence remain valid"
+  ],
+  "source_rows": 0,
+  "backup_sha256": "79839fd823979b262aa92b9ae5e5d9dd8469dbe886a4ededd4d2749e419c095a",
+  "backup_restore_verified": true,
+  "all_original_note_fields_preserved": true,
+  "schema_and_indexes_unchanged": true,
+  "identity_sequence_not_rewound": true,
+  "database_image_and_volume_unchanged": true,
+  "source_image": "ghcr.io/tommmdl/docker-lab@sha256:343f2b23294c09bea9c3250a3b3fd1f95d817acea9db0231dfaaaf406f22fbac",
+  "active_image": "ghcr.io/tommmdl/docker-lab@sha256:ae2e93fdbab7bc912897e6524b3e17b982e97cfb29bcb4fc36d9c014d615eb91",
+  "rollback_note_removed": true,
+  "scope": "API image changes only; actual rollback serves a post-cutover note from the same database. Private logical backups restored separately as a recovery check; never restored over live notes."
+}

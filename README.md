@@ -4,7 +4,11 @@
 
 Os outros laboratórios mostram a aplicação funcionando. Aqui a pergunta muda: o que existe dentro da imagem que merece atenção antes de ela seguir no pipeline?
 
-O Trivy acompanha cinco imagens por digest: a API Debian, o PostgreSQL Alpine ativo, o Bookworm guardado para recuperação e as duas candidatas da API Alpine, básica e instrumentada. O GitHub Actions guarda os relatórios e bloqueia a etapa se a política encontrar ocorrências HIGH ou CRITICAL, inclusive sem correção publicada.
+O Trivy acompanha cinco imagens por digest: as APIs Alpine básica e instrumentada, o PostgreSQL Alpine ativo e as imagens Debian da API e do banco guardadas para recuperação. O GitHub Actions guarda os relatórios e bloqueia a etapa se a política encontrar ocorrências HIGH ou CRITICAL, inclusive sem correção publicada.
+
+## Alpine adotado nas APIs principais
+
+Docker/Kubernetes básico agora usam a API Alpine testada; o workload GitOps usa a derivada OpenTelemetry publicada. Os rollbacks reais preservaram notas escritas após a troca, e os bancos ficaram no lugar. [Adoção, recuperação e evidências nos dois idiomas](docs/api-adoption.md). As imagens Debian guardadas continuam visíveis e bloqueando.
 
 ## Uma alternativa Alpine para a API, testada em separado
 
@@ -50,8 +54,8 @@ python3 tests/verify.py
 python3 scripts/scan.py notes-api
 python3 scripts/scan.py postgres
 python3 scripts/scan.py postgres-bookworm
-python3 scripts/scan.py notes-api-alpine
-python3 scripts/scan.py notes-api-alpine-otel
+python3 scripts/scan.py notes-api-debian
+python3 scripts/scan.py notes-api-otel
 ```
 
 Cada comando de scan pode encerrar com código 1 porque a imagem foi bloqueada. Execute os alvos separadamente ou use terminais separados; não coloque `|| true` num pipeline de aprovação. O cache local do Trivy pode serializar acessos concorrentes.
