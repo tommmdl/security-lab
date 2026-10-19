@@ -1,0 +1,21 @@
+{
+  "verified_at_utc": "2026-10-19T00:52:02Z",
+  "source_image": "ghcr.io/tommmdl/docker-lab@sha256:be42c09595d7059956490eeab607b742afc96268db48f91f4eb1fd53edc89b52",
+  "target_image": "ghcr.io/tommmdl/docker-lab@sha256:8b6813ec76804698c33e4dac8f501ca8f641affcbd27cbc3b7dd6fdb02874fc3",
+  "source_rows": 0,
+  "checks_passed": 7,
+  "checks": [
+    "Final source dump restores all note fields and identity sequence into a different Alpine volume",
+    "Reverse dump restores every row and current sequence in a fresh Debian volume",
+    "Actual API rollback serves the note written after Alpine cutover",
+    "Return to Alpine preserves original notes; only the controlled rollback probe is removed",
+    "Running database uses the tested immutable Alpine image",
+    "Original notes survive database container replacement",
+    "Original Debian volume and a restored rollback volume remain retained"
+  ],
+  "backup_sha256": "fc4398c890593787678f3a8109cdc3088bff63c7ecd66538e31519b3588c4f71",
+  "backup_content_published": false,
+  "rollback_includes_post_cutover_write": true,
+  "original_volume_retained": true,
+  "scope": "Local notes schema; writes paused for each dump/cutover. Fresh restore volumes, no physical PGDATA reuse."
+}

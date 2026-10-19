@@ -1,0 +1,35 @@
+{
+  "executed_at_utc": "2026-10-19T00:55:46Z",
+  "checks_passed": 16,
+  "checks": [
+    "Real API requests collected through Alloy",
+    "Controlled 404 appears in application logs",
+    "Logs carry namespace, app, pod and container labels",
+    "Marker is not an indexed label",
+    "PostgreSQL log message also collected",
+    "Grafana Loki datasource is healthy",
+    "Grafana query returns the request marker",
+    "Logging dashboard contains four panels",
+    "Existing Prometheus datasource remains healthy",
+    "Existing metrics dashboard remains present",
+    "Collected logs remain queryable after Loki Pod replacement",
+    "Loki PVC identity is preserved",
+    "Loki Pod was actually replaced",
+    "Collector may read application Pod logs",
+    "Collector denied secrets in notes-lab",
+    "Collector denied pods/log in monitoring-lab"
+  ],
+  "marker": "logging-lab-83bea30873de4fe993e3b4a35595130e",
+  "versions": {
+    "loki": {
+      "tag": "grafana/loki:3.7.8",
+      "pinned": "grafana/loki@sha256:1107dd5274e0ada47e42472b7a7e71f3b2a2fe878878108f3e2f9e51528f0193"
+    },
+    "alloy": {
+      "tag": "grafana/alloy:v1.20.1",
+      "pinned": "grafana/alloy@sha256:2aa2099af76c0098d4af7a4d6e48f86cb66dc1a000222ad927a1c67c6542d13f"
+    }
+  },
+  "scope": "API and PostgreSQL stdout/stderr from notes-lab; API discovery and tailing through Alloy; actual Grafana query; Loki Pod replacement with same PVC; no changes to application manifests",
+  "final_state": "Loki and Alloy running; existing Grafana metrics datasource and dashboard preserved"
+}

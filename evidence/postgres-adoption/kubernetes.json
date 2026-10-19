@@ -1,0 +1,21 @@
+{
+  "verified_at_utc": "2026-10-19T00:52:58Z",
+  "source_image": "ghcr.io/tommmdl/docker-lab@sha256:be42c09595d7059956490eeab607b742afc96268db48f91f4eb1fd53edc89b52",
+  "target_image": "ghcr.io/tommmdl/docker-lab@sha256:8b6813ec76804698c33e4dac8f501ca8f641affcbd27cbc3b7dd6fdb02874fc3",
+  "source_rows": 0,
+  "checks_passed": 7,
+  "checks": [
+    "Final source dump restores all note fields and sequence into a new Alpine PVC",
+    "Reverse dump restores all rows and current sequence into a fresh Debian rollback PVC",
+    "Actual Kubernetes Service rollback serves the note created after Alpine cutover",
+    "Return to Alpine preserves original notes; only the controlled probe is removed",
+    "Active Alpine PVC is separate and original Debian PVC retains its identity",
+    "Notes survive Alpine database Pod replacement",
+    "Database runs as non-root UID 70 with the existing restricted security context"
+  ],
+  "backup_sha256": "66636ab7b880b4a8475b00392047d8778b888cad4ad8eafa21a2354ef1b36303",
+  "backup_content_published": false,
+  "rollback_includes_post_cutover_write": true,
+  "original_volume_retained": true,
+  "scope": "Local notes schema; writes paused for each dump/cutover. Fresh restore volumes, no physical PGDATA reuse."
+}

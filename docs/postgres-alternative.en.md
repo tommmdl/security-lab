@@ -2,6 +2,8 @@
 
 [Português](postgres-alternative.md) · English
 
+This page records the earlier isolated test. Alpine has now been adopted in both labs: [current deployment and rollback](postgres-adoption.en.md).
+
 The tested alternative is PostgreSQL 17.11 on Alpine 3.24.2, extended with our corrected static gosu helper, the existing role-hardening scripts and zlib 1.3.2-r1. It has libxml2 2.13.9-r2 and keeps XML functionality available. CVE-2026-6653 is absent from the full report; the library itself was replaced, rather than hidden from the scanner.
 
 [Debian's advisory](https://security-tracker.debian.org/tracker/CVE-2026-6653) records the upstream fix from libxml2 2.11.0 while the Bookworm version remains affected. We confirmed the installed Alpine package version and the server's dynamic link to libxml2. A benign XPath/XML query and the application tests passed. This is version/vendor evidence and functional validation, not an exploit reproduction.
