@@ -13,5 +13,15 @@
     "name": "postgres-bookworm",
     "image": "ghcr.io/tommmdl/docker-lab@sha256:be42c09595d7059956490eeab607b742afc96268db48f91f4eb1fd53edc89b52",
     "context": "Retained Debian recovery image and separate GHCR demo; historical findings remain visible and blocking"
+  },
+  {
+    "name": "notes-api-alpine",
+    "image": "ghcr.io/tommmdl/docker-lab@sha256:ae2e93fdbab7bc912897e6524b3e17b982e97cfb29bcb4fc36d9c014d615eb91",
+    "context": "Experimental basic Alpine API; isolated preview, primary Debian API still blocked"
+  },
+  {
+    "name": "notes-api-alpine-otel",
+    "image": "ghcr.io/tommmdl/docker-lab@sha256:e01c467c0987cc2d999778a4e9ee429bee1d6af4bcdef80e38ce620b95a0b8da",
+    "context": "Experimental musl OpenTelemetry derivative; full separate scan and real tracing tests"
   }
 ]

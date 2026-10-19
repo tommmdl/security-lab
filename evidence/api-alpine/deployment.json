@@ -1,0 +1,28 @@
+{
+  "verified_at_utc": "2026-10-19T13:33:54Z",
+  "candidate_images": [
+    "ghcr.io/tommmdl/docker-lab@sha256:ae2e93fdbab7bc912897e6524b3e17b982e97cfb29bcb4fc36d9c014d615eb91",
+    "ghcr.io/tommmdl/docker-lab@sha256:e01c467c0987cc2d999778a4e9ee429bee1d6af4bcdef80e38ce620b95a0b8da"
+  ],
+  "preview_note_fields_preserved_after_published_image_switch": true,
+  "primary_api_images_unchanged": true,
+  "primary_service_selector_unchanged": true,
+  "separate_database_pvc": true,
+  "primary_pvc_uid": "7e82898b-7924-47d4-9f0a-2ba0d9364f98",
+  "candidate_pvc_uid": "cf8cc51e-df6f-41fc-b4a4-a0781d0a670a",
+  "argocd": {
+    "sync": "Synced",
+    "health": "Healthy",
+    "source_path": "workloads/notes-traced"
+  },
+  "readiness_by_port": {
+    "8000": 200,
+    "8005": 200,
+    "8016": 200
+  },
+  "candidate_api_container_uid": 10001,
+  "candidate_docker_api_memory_bytes": 268435456,
+  "candidate_docker_api_cpu_quota": 1000000000,
+  "candidate_docker_api_pid_limit": 128,
+  "scope": "Isolated alternatives; primary API/DB image pins and volume attachments unchanged. No automatic adoption."
+}

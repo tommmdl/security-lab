@@ -1,0 +1,9 @@
+3.24.2
+Python 3.13.16
+zlib: A compression/decompression Library
+zlib: https://zlib.net/
+zlib: 105 KiB
+	/lib/ld-musl-x86_64.so.1 (0x72b9ec0ef000)
+	libpython3.13.so.1.0 => /usr/local/bin/../lib/libpython3.13.so.1.0 (0x72b9ebad0000)
+	libc.musl-x86_64.so.1 => /lib/ld-musl-x86_64.so.1 (0x72b9ec0ef000)
+{"platform": "linux-x86_64", "libpq": 180006, "backend": "binary", "pip_present": false, "ensurepip_present": false, "ssl": "OpenSSL 3.5.9 29 Sep 2026", "zlib": "1.3.2"}

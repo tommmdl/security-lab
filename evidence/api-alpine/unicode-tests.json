@@ -1,0 +1,12 @@
+{
+  "docker": {
+    "controlled_rows": 7,
+    "all_titles_preserved": true,
+    "cleanup": "Only IDs created by this test are removed"
+  },
+  "kubernetes": {
+    "controlled_rows": 7,
+    "all_titles_preserved": true,
+    "cleanup": "Only IDs created by this test are removed"
+  }
+}

@@ -6,6 +6,10 @@ Other labs show the application working. This one asks a different question: wha
 
 Trivy scans three images by digest: the basic API, the active Alpine PostgreSQL, and the retained Bookworm recovery image. GitHub Actions preserves reports and blocks HIGH or CRITICAL findings, including those without a published fix.
 
+## An Alpine API alternative, tested separately
+
+Basic and OpenTelemetry variants recorded zero findings with complete inventories. Both passed application/SQL checks; real tracing reached Collector, Tempo, Grafana and Loki. Main Debian API findings remain visible and blocking. [Experiment, published images and bilingual evidence](docs/api-alpine.en.md).
+
 ## Reviewing the API
 
 Its 44 HIGH occurrences correspond to eight distinct operating-system CVEs. This round checks prerequisites and strengthens runtime limits; it does not claim binary patches or reduce the gate count. [Review, evidence and remaining work](docs/api-high-review.en.md).

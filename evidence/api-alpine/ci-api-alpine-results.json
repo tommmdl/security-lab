@@ -1,0 +1,35 @@
+{
+  "variants": [
+    {
+      "variant": "basic",
+      "image": "docker-lab-api-alpine:local",
+      "api_checks": 23,
+      "database_security_checks": 20,
+      "runtime": {
+        "python": "3.13.16",
+        "psycopg": "3.3.6",
+        "pq_backend": "binary",
+        "libpq_version": 180006,
+        "postgres": "17.11"
+      },
+      "isolated_project": true,
+      "original_volumes_reused": false
+    },
+    {
+      "variant": "traced",
+      "image": "docker-lab-api-alpine-otel:local",
+      "api_checks": 23,
+      "database_security_checks": 20,
+      "runtime": {
+        "python": "3.13.16",
+        "psycopg": "3.3.6",
+        "pq_backend": "binary",
+        "libpq_version": 180006,
+        "postgres": "17.11"
+      },
+      "isolated_project": true,
+      "original_volumes_reused": false
+    }
+  ],
+  "scope": "Two unique temporary projects/volumes; only these resources are removed. OTLP tracing is verified separately."
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "allow",
+  "policy": {
+    "version": 1,
+    "block_severities": [
+      "HIGH",
+      "CRITICAL"
+    ],
+    "include_unfixed": true,
+    "block_end_of_life_os": true,
+    "require_package_inventory": true
+  },
+  "artifact": "ghcr.io/tommmdl/docker-lab@sha256:ae2e93fdbab7bc912897e6524b3e17b982e97cfb29bcb4fc36d9c014d615eb91",
+  "severity_counts": {},
+  "finding_count": 0,
+  "blocking_count": 0,
+  "blocking_without_fix": 0,
+  "os_end_of_life": false,
+  "blocking_findings": []
+}

@@ -1,0 +1,22 @@
+{
+  "checks_passed": 13,
+  "checks": [
+    "Instrumented notes endpoint returns 200",
+    "Traceparent is preserved",
+    "Tempo stores a server span",
+    "Server preserves caller parent",
+    "PostgreSQL child span exists",
+    "DB span parent matches server",
+    "SELECT operation appears",
+    "Service name identifies candidate",
+    "Traced API writes a note",
+    "Note title is not exported",
+    "Only fixture note is removed",
+    "Unknown route returns 404",
+    "404 is recorded in spans"
+  ],
+  "image": "docker-lab-api-alpine-otel:local",
+  "trace_id": "62c0c032bb954cdeb619ec04e88a84a8",
+  "database_spans": 1,
+  "scope": "Actual Flask/Psycopg -> Collector -> Tempo over OTLP HTTP in a disposable Compose stack; no synthetic span injection. Grafana/Loki integration is tested separately."
+}

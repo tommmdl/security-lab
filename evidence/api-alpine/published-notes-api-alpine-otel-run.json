@@ -1,0 +1,22 @@
+{
+  "scanned_at_utc": "2026-10-19T13:32:47Z",
+  "target": {
+    "name": "notes-api-alpine-otel",
+    "image": "ghcr.io/tommmdl/docker-lab@sha256:e01c467c0987cc2d999778a4e9ee429bee1d6af4bcdef80e38ce620b95a0b8da",
+    "context": "Experimental musl OpenTelemetry derivative; full separate scan and real tracing tests"
+  },
+  "platform": "linux/amd64",
+  "trivy": {
+    "version": "0.76.0",
+    "asset": "trivy_0.76.0_Linux-64bit.tar.gz",
+    "sha256": "e24b1c51293c1b15e4ba8d45bbc7891ba053f90278ec2698f3562c993e145fe7",
+    "release_url": "https://github.com/aquasecurity/trivy/releases/tag/v0.76.0"
+  },
+  "database_metadata": {
+    "Version": 2,
+    "NextUpdate": "2026-10-19T18:32:29.177029595Z",
+    "UpdatedAt": "2026-10-18T18:32:29.177029985Z",
+    "DownloadedAt": "2026-10-18T22:34:48.050436036Z"
+  },
+  "report_sha256": "c1561a1036fc17c0bea254ba721df1001f3a46ef32ad321a5153b60c98b41704"
+}

@@ -41,7 +41,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [notes-api, postgres, postgres-bookworm]
+        target: [notes-api, postgres, postgres-bookworm, notes-api-alpine, notes-api-alpine-otel]
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:

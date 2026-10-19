@@ -1,0 +1,51 @@
+{
+  "debian_baseline": {
+    "image": "ghcr.io/tommmdl/docker-lab@sha256:343f2b23294c09bea9c3250a3b3fd1f95d817acea9db0231dfaaaf406f22fbac",
+    "findings": 164,
+    "severity_counts": {
+      "LOW": 61,
+      "HIGH": 44,
+      "MEDIUM": 58,
+      "UNKNOWN": 1
+    },
+    "inventory_entries": 98,
+    "report_sha256": "ec6494c6df2d0b7c17d27507991a22aef76d23b9ebca3affcc86c667aab2f817"
+  },
+  "official_alpine_python": {
+    "image": "python:3.13.16-alpine3.24@sha256:2d9aefe2fef018a7eb2c13064c89c71929800fd2e5dccdbf52ea5da5bb8d929a",
+    "findings": 7,
+    "severity_counts": {
+      "MEDIUM": 3,
+      "HIGH": 4
+    },
+    "inventory_entries": 48,
+    "report_sha256": "10b1ce16a20d6ffb3fa7e2af97bbbc1d64d694f3498c863b58036494db7da35c"
+  },
+  "installer_removed_before_zlib_fix": {
+    "image": "docker-lab-api-alpine:local",
+    "findings": 1,
+    "severity_counts": {
+      "MEDIUM": 1
+    },
+    "inventory_entries": 40,
+    "report_sha256": "44e76a19917f825ffdfbb01d0512b9f13e064bc18b25c43bf3ba4ff52c1e9b6a"
+  },
+  "candidate_basic": {
+    "image": "docker-lab-api-alpine:local",
+    "findings": 0,
+    "severity_counts": {},
+    "inventory_entries": 40,
+    "report_sha256": "f6cc49a05b9a07f4f184d8792fde091a161f4d3985a5c026f90dec2d71e86686"
+  },
+  "candidate_traced": {
+    "image": "docker-lab-api-alpine-otel:local",
+    "findings": 0,
+    "severity_counts": {},
+    "inventory_entries": 63,
+    "report_sha256": "3158bd8f3ab551b0a1dc7466b95ecbf4d6225b6615eb0c4f0a68507b9f3412e6"
+  },
+  "policy_unchanged": true,
+  "ignore_rules_added": false,
+  "default_api_adopted": false,
+  "scope": "Same application dependency lock and CPython 3.13.16; different libc/OS package set and advisory coverage. Zero is a dated scanner snapshot, not proof of no vulnerabilities."
+}

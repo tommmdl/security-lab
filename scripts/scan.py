@@ -4,7 +4,7 @@ import hashlib,json,os,subprocess,sys,time
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 os.chdir(ROOT)
-if len(sys.argv)!=2:raise SystemExit('Use: python3 scripts/scan.py notes-api|postgres|postgres-bookworm')
+if len(sys.argv)!=2:raise SystemExit('Use: python3 scripts/scan.py TARGET (see config/targets.json)')
 target=next((t for t in json.loads((ROOT/'config/targets.json').read_text()) if t['name']==sys.argv[1]),None)
 if target is None:raise SystemExit('Unknown target')
 output=ROOT/'.local/reports'/target['name'];output.mkdir(parents=True,exist_ok=True)
