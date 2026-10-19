@@ -1,0 +1,21 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.76.0"
+  },
+  "ReportID": "01a15508-5028-7365-af0a-5c1e1d948962",
+  "CreatedAt": "2026-10-19T16:39:30.600224376Z",
+  "ArtifactName": "/home/runner/work/security-lab/security-lab/fixtures/dockerfiles/improved",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": "Dockerfile",
+      "Class": "config",
+      "Type": "dockerfile",
+      "MisconfSummary": {
+        "Successes": 20,
+        "Failures": 0
+      }
+    }
+  ]
+}

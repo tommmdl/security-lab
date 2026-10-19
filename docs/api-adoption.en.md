@@ -76,3 +76,11 @@ Both databases were empty before the rehearsal. We created Unicode notes after c
 One `/notes` read timed out immediately after rolling out the previous instrumented image. The operation stopped with its backup and note intact; verification resumed without repeating the POST. The helper now retries only reads on transient failures. All 19 tracing checks passed on both the previous image and the adopted Alpine image.
 
 The 23 Docker application checks, 20 database and resource checks, and the self-heal exercise preserving a note and PVC also passed. Subsequent lifecycle tests intentionally recreate Docker containers while keeping the volume; the database container identity stayed unchanged during the API image switch itself. The old image archive was saved privately with a checksum; archive reload was not rehearsed, and the actual rollback used the image already available on the nodes.
+
+## GitHub verification
+
+The [security workflow](https://github.com/tommmdl/security-lab/actions/runs/39287212349) published complete reports: all three active images have zero findings; the retained Debian API has 164/44 HIGH and PostgreSQL Bookworm has 350/68 HIGH/2 CRITICAL. The blocked overall result is expected for these two recovery targets. JSON/SARIF artifacts are copied into the evidence directory, together with the 15 policy checks.
+
+The [19 tracing checks on the runner](https://github.com/tommmdl/tracing-lab/actions/runs/39286801534) also produced complete evidence. The [first Kubernetes run](https://github.com/tommmdl/kubernetes-lab/actions/runs/39286751167) exposed a test race: after a database restart, HTTP recovered before both replicas' readiness probes updated. We kept the availability requirement and now wait for database recovery's deployment rollout before the independent invalid-image test. The [new run](https://github.com/tommmdl/kubernetes-lab/actions/runs/39287632451) records that fix. This is separate from the read timeout observed during the live rehearsal.
+
+The new Kubernetes run passed all 24 recovery, persistence and rollback checks.

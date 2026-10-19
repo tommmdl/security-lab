@@ -1,0 +1,26 @@
+{
+  "recorded_at_utc": "2026-10-19T16:44:21Z",
+  "kubernetes": {
+    "url": "https://github.com/tommmdl/kubernetes-lab/actions/runs/39287632451",
+    "checks_passed": 24,
+    "result": "success"
+  },
+  "tracing": {
+    "url": "https://github.com/tommmdl/tracing-lab/actions/runs/39286801534",
+    "checks_passed": 19,
+    "result": "success"
+  },
+  "security": {
+    "url": "https://github.com/tommmdl/security-lab/actions/runs/39287212349",
+    "result": "blocked by retained Debian targets",
+    "active_images_findings": 0,
+    "retained_api_high": 44,
+    "retained_postgres_high": 68,
+    "retained_postgres_critical": 2,
+    "policy_checks_passed": 15
+  },
+  "first_kubernetes_run": {
+    "url": "https://github.com/tommmdl/kubernetes-lab/actions/runs/39286751167",
+    "result": "failed: database HTTP recovered before all deployment readiness probes; corrected by awaiting deployment recovery before independent broken-image test"
+  }
+}

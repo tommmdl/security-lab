@@ -1,0 +1,17 @@
+{
+  "executed_at_utc": "2026-10-19T16:39:47Z",
+  "all_original_rows_preserved": true,
+  "no_rehearsal_notes_left": true,
+  "postgres_docker_image_and_mounts_unchanged": true,
+  "postgres_pvc_uid_preserved": "7e82898b-7924-47d4-9f0a-2ba0d9364f98",
+  "docker_api_image": "ghcr.io/tommmdl/docker-lab@sha256:ae2e93fdbab7bc912897e6524b3e17b982e97cfb29bcb4fc36d9c014d615eb91",
+  "kubernetes_api_image": "ghcr.io/tommmdl/docker-lab@sha256:e01c467c0987cc2d999778a4e9ee429bee1d6af4bcdef80e38ce620b95a0b8da",
+  "argocd_sync": "Synced",
+  "argocd_health": "Healthy",
+  "argocd_automated": {
+    "prune": false,
+    "selfHeal": true
+  },
+  "argocd_revision": "c46b4c37728ece7592fd1011cfa7b5196430aea7",
+  "scope": "Final read-only verification after Docker lifecycle and GitOps tests; no database restoration over live data."
+}

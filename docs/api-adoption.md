@@ -76,3 +76,11 @@ Os dois bancos estavam vazios antes do ensaio. Para testar escritas reais, criam
 Houve um timeout de leitura de `/notes` logo após o rollout da imagem instrumentada anterior. A operação parou preservando o backup e a nota; retomamos a conferência sem repetir o POST. O helper agora repete somente leituras em falhas transitórias. Os 19 testes de tracing passaram tanto na versão anterior quanto na Alpine adotada.
 
 Também passaram os 23 testes da aplicação Docker, os 20 testes de banco e recursos e o ensaio de self-heal com preservação de nota e PVC. Os testes posteriores de ciclo de vida recriam containers Docker intencionalmente, mantendo o volume; a identidade do container foi preservada durante a troca de imagem da API em si. O arquivo privado da imagem antiga foi salvo com checksum; não ensaiamos sua recarga, e o rollback real utilizou a imagem já disponível nos nós.
+
+## Verificação no GitHub
+
+O [pipeline de segurança](https://github.com/tommmdl/security-lab/actions/runs/39287212349) publicou relatórios completos: as três imagens ativas têm zero achados; a API Debian preserva 164/44 HIGH e o PostgreSQL Bookworm 350/68 HIGH/2 CRITICAL. O resultado geral bloqueado é esperado por esses dois alvos de recuperação. Os artefatos JSON/SARIF estão copiados nas evidências, incluindo as 15 verificações da política.
+
+Os [19 testes de tracing no runner](https://github.com/tommmdl/tracing-lab/actions/runs/39286801534) também produziram evidência completa. A [primeira execução Kubernetes](https://github.com/tommmdl/kubernetes-lab/actions/runs/39286751167) expôs uma corrida no teste: após reiniciar o banco, o HTTP se recuperou antes da atualização das probes das duas réplicas. Mantivemos a exigência de disponibilidade e passamos a esperar o rollout da recuperação antes do teste independente de imagem inválida. A [nova execução](https://github.com/tommmdl/kubernetes-lab/actions/runs/39287632451) registra essa correção. Isso é separado do timeout de leitura observado no ensaio vivo.
+
+A nova execução Kubernetes passou nos 24 testes de recuperação, persistência e rollback.

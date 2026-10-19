@@ -12,7 +12,7 @@ Docker/Kubernetes básico agora usam a API Alpine testada; o workload GitOps usa
 
 ## Uma alternativa Alpine para a API, testada em separado
 
-As variantes básica e OpenTelemetry registraram zero achados com inventário completo. As duas passaram nos testes de aplicação/SQL; o tracing real chegou ao Collector, Tempo, Grafana e Loki. Os achados da API Debian principal continuam visíveis e bloqueando. [Ensaio, imagens publicadas e evidências nos dois idiomas](docs/api-alpine.md).
+As variantes básica e OpenTelemetry registraram zero achados com inventário completo. As duas passaram nos testes de aplicação/SQL; o tracing real chegou ao Collector, Tempo, Grafana e Loki. Os achados da API Debian anterior continuam visíveis no alvo de recuperação `notes-api-debian`, que permanece bloqueado. [Ensaio, imagens publicadas e evidências nos dois idiomas](docs/api-alpine.md).
 
 ## Analisando a API
 
@@ -24,7 +24,7 @@ O banco ativo agora usa o digest Alpine testado. Backup lógico, restauração e
 
 ## Uma alternativa testada para a libxml2
 
-A alternativa Alpine ficou com **zero achados na análise completa registrada**. Passaram os testes de restauração lógica, API, segurança e retorno ao Debian; os bancos originais continuam intactos. Os gates da API e do Bookworm seguem bloqueados. Veja a [comparação e as evidências completas](docs/postgres-alternative.md).
+A alternativa Alpine ficou com **zero achados na análise completa registrada**. Passaram os testes de restauração lógica, API, segurança e retorno ao Debian; os bancos originais continuam intactos. Os gates da API Debian de recuperação e do Bookworm seguem bloqueados. Veja a [comparação e as evidências completas](docs/postgres-alternative.md).
 
 ## Histórico do Bookworm: os críticos que permaneceram
 

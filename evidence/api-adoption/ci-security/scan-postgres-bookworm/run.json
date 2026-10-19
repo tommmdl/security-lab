@@ -1,0 +1,22 @@
+{
+  "scanned_at_utc": "2026-10-19T16:39:51Z",
+  "target": {
+    "name": "postgres-bookworm",
+    "image": "ghcr.io/tommmdl/docker-lab@sha256:be42c09595d7059956490eeab607b742afc96268db48f91f4eb1fd53edc89b52",
+    "context": "Retained Debian recovery image and separate GHCR demo; historical findings remain visible and blocking"
+  },
+  "platform": "linux/amd64",
+  "trivy": {
+    "version": "0.76.0",
+    "asset": "trivy_0.76.0_Linux-64bit.tar.gz",
+    "sha256": "e24b1c51293c1b15e4ba8d45bbc7891ba053f90278ec2698f3562c993e145fe7",
+    "release_url": "https://github.com/aquasecurity/trivy/releases/tag/v0.76.0"
+  },
+  "database_metadata": {
+    "Version": 2,
+    "NextUpdate": "2026-10-20T13:35:30.519058502Z",
+    "UpdatedAt": "2026-10-19T13:35:30.519058742Z",
+    "DownloadedAt": "2026-10-19T16:39:48.092230601Z"
+  },
+  "report_sha256": "7764ecb6f26c4d7692009977e408d95aa9417e85de6b706ccf35a249d66f1e77"
+}

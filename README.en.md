@@ -24,7 +24,7 @@ The active database now uses the tested Alpine digest. Logical backups, fresh re
 
 ## A tested alternative for libxml2
 
-The Alpine alternative has **zero findings in the recorded full scan**. Logical restore, API, security and reverse-restore tests passed; original databases remain unchanged. The API and Bookworm gates remain blocked. See the [comparison and complete evidence](docs/postgres-alternative.en.md).
+The Alpine alternative has **zero findings in the recorded full scan**. Logical restore, API, security and reverse-restore tests passed; original databases remain unchanged. The recovery Debian API and Bookworm gates remain blocked. See the [comparison and complete evidence](docs/postgres-alternative.en.md).
 
 ## Bookworm history: the remaining critical findings
 
