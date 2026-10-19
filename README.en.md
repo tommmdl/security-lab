@@ -14,9 +14,9 @@ The active database now uses the tested Alpine digest. Logical backups, fresh re
 
 The Alpine alternative has **zero findings in the recorded full scan**. Logical restore, API, security and reverse-restore tests passed; original databases remain unchanged. The API and Bookworm gates remain blocked. See the [comparison and complete evidence](docs/postgres-alternative.en.md).
 
-## Review of the remaining PostgreSQL critical findings
+## Bookworm history: the remaining critical findings
 
-SQLite and unused GPG tools were removed from the published image. PostgreSQL goes from 412 to **350 findings**, with **68 HIGH and 2 CRITICAL** remaining. libxml2 has compensating controls and remains affected; Debian's zlib binary does not build the affected MiniZip code, but the scanner finding stays visible and blocking. See the [analysis, sources and complete evidence](docs/postgresql-critical.en.md).
+In the retained Debian recovery image, SQLite and unused GPG tools were removed. That PostgreSQL goes from 412 to **350 findings**, with **68 HIGH and 2 CRITICAL** remaining. libxml2 has compensating controls and remains affected; Debian's zlib binary does not build the affected MiniZip code, but the scanner finding stays visible and blocking. See the [analysis, sources and complete evidence](docs/postgresql-critical.en.md).
 
 ## After the first remediation round
 

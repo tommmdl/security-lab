@@ -61,3 +61,9 @@ Resultados públicos: [Docker](../evidence/postgres-adoption/docker.json), [Kube
 ## Conferência das integrações
 
 A imagem ativa continua com zero achados na análise remota completa registrada. Passaram 23 testes da API e 20 de privilégios/recursos no Docker; no Kubernetes, 20 de privilégios/segurança. O self-heal do Argo corrigiu dois desvios de réplicas, preservando o PVC ativo e a nota do teste. Logging passou em 16 verificações e tracing em 19. A descoberta do Alloy e a consulta do painel PostgreSQL agora incluem `notes-db-alpine`, mantendo o histórico `notes-db`; o teste de logging escolhe o banco ativo pelo Service. A demonstração GHCR separada continua na imagem anterior e fica fora desta troca dos dois labs.
+
+O [CI do Kubernetes](https://github.com/tommmdl/kubernetes-lab/actions/runs/39182856357) passou nos 24 testes de recuperação, persistência e rollback em cluster novo. O [CI de segurança](https://github.com/tommmdl/security-lab/actions/runs/39183015128) aprovou os 15 testes da política e o banco ativo `postgres`; API e `postgres-bookworm` permaneceram bloqueados. Os relatórios completos acompanham as evidências, sem supressões.
+
+Depois da mudança do padrão, repetimos a regressão com sete notas Unicode: passaram 17 verificações de migração, 23 da API e 20 de segurança. A regressão histórica de endurecimento das contas também passou, somente em imagens Debian descartáveis. Ela sobrescreve explicitamente o novo padrão e a inicialização, evitando que esse teste antigo tente trocar fisicamente um diretório Debian por Alpine.
+
+O [CI de logging](https://github.com/tommmdl/logging-lab/actions/runs/39183020303) também passou nas 16 verificações. A execução viva com Alpine está coberta pela evidência local de logging; o lab de publicação e os demais commits de origem históricos não foram avançados silenciosamente.

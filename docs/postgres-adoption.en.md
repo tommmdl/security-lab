@@ -61,3 +61,9 @@ Public results: [Docker](../evidence/postgres-adoption/docker.json), [Kubernetes
 ## Integration checks
 
 The active image still has zero findings in the recorded full remote scan. Docker passed 23 API and 20 privilege/resource checks; Kubernetes passed 20 privilege/security checks. Argo self-heal corrected two replica drifts while preserving the active PVC and test note. Logging passed 16 checks and tracing 19. Alloy discovery and the PostgreSQL dashboard query now include `notes-db-alpine` and retain `notes-db` history; the logging test selects the active database through the Service. The standalone GHCR demo remains on its earlier image and is outside this two-lab cutover.
+
+The [Kubernetes CI run](https://github.com/tommmdl/kubernetes-lab/actions/runs/39182856357) passed all 24 recovery, persistence and rollback checks on a fresh cluster. The [security CI run](https://github.com/tommmdl/security-lab/actions/runs/39183015128) passed 15 policy checks and approved active `postgres`; API and `postgres-bookworm` remained blocked. Full reports accompany the evidence, without suppressions.
+
+After changing the default, the seven-Unicode-note migration regression passed again: 17 migration checks, 23 API checks and 20 security checks. The historical in-place role-hardening regression also passed on disposable Debian images only. It explicitly overrides the new default and its initialization settings, preventing a Debian-to-Alpine physical data-directory swap in that older test.
+
+The [logging CI run](https://github.com/tommmdl/logging-lab/actions/runs/39183020303) also passed all 16 checks. The live Alpine deployment is covered by the separate local logging evidence; the publication lab and other historical source pins are not silently advanced.

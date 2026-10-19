@@ -14,9 +14,9 @@ O banco ativo agora usa o digest Alpine testado. Backup lógico, restauração e
 
 A alternativa Alpine ficou com **zero achados na análise completa registrada**. Passaram os testes de restauração lógica, API, segurança e retorno ao Debian; os bancos originais continuam intactos. Os gates da API e do Bookworm seguem bloqueados. Veja a [comparação e as evidências completas](docs/postgres-alternative.md).
 
-## Análise dos críticos restantes do PostgreSQL
+## Histórico do Bookworm: os críticos que permaneceram
 
-SQLite e ferramentas GPG sem uso foram removidos da imagem publicada. O PostgreSQL passa de 412 para **350 achados**, com **68 HIGH e 2 CRITICAL** restantes. A libxml2 recebe controles compensatórios e continua afetada; o binário zlib do Debian não compila o MiniZip afetado, mas o alerta continua visível e bloqueando. Veja a [análise, as fontes e as evidências completas](docs/postgresql-critical.md).
+Na imagem Debian guardada para recuperação, SQLite e ferramentas GPG sem uso foram removidos. Esse PostgreSQL passa de 412 para **350 achados**, com **68 HIGH e 2 CRITICAL** restantes. A libxml2 recebe controles compensatórios e continua afetada; o binário zlib do Debian não compila o MiniZip afetado, mas o alerta continua visível e bloqueando. Veja a [análise, as fontes e as evidências completas](docs/postgresql-critical.md).
 
 ## Depois da primeira rodada de correções
 
