@@ -1,0 +1,33 @@
+{
+  "decision": "block",
+  "policy": {
+    "version": 1,
+    "block_severities": [
+      "HIGH",
+      "CRITICAL"
+    ],
+    "include_unfixed": true,
+    "block_end_of_life_os": true,
+    "require_package_inventory": true
+  },
+  "artifact": "ghcr.io/tommmdl/docker-lab@sha256:8b6813ec76804698c33e4dac8f501ca8f641affcbd27cbc3b7dd6fdb02874fc3",
+  "severity_counts": {
+    "UNKNOWN": 2,
+    "HIGH": 1
+  },
+  "finding_count": 3,
+  "blocking_count": 1,
+  "blocking_without_fix": 0,
+  "os_end_of_life": false,
+  "blocking_findings": [
+    {
+      "target": "usr/local/bin/gosu",
+      "id": "CVE-2026-111943",
+      "package": "stdlib",
+      "installed": "v1.27.2",
+      "fixed": "1.26.10, 1.27.3",
+      "severity": "HIGH",
+      "status": "fixed"
+    }
+  ]
+}

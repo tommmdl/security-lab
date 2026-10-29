@@ -1,0 +1,16 @@
+{
+  "verified_at_utc": "2026-10-29T19:40:42Z",
+  "checks_passed": 6,
+  "checks": [
+    "API starts on the previously adopted OpenTelemetry image with certifi 2026.7.22",
+    "Patched OpenTelemetry image serves the API with certifi 2026.10.18",
+    "Create, list and delete work on the patched image",
+    "Real rollback to the previous image reads the note written on the patched image",
+    "Return to the patched image keeps the same data",
+    "docker-lab is back on its default basic Alpine API"
+  ],
+  "previous_image": "ghcr.io/tommmdl/docker-lab@sha256:e01c467c0987cc2d999778a4e9ee429bee1d6af4bcdef80e38ce620b95a0b8da",
+  "patched_image": "ghcr.io/tommmdl/docker-lab@sha256:853f73da8162b912275458bd46073ebb74c63f8b52e2545946acb0c50e804d31",
+  "duration_seconds": 106.5,
+  "scope": "Stateless API image swap in the local docker-lab Compose project, OTLP exporters disabled. The Kubernetes tracing path is validated by the tracing-lab CI."
+}

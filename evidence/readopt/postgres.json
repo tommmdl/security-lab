@@ -1,0 +1,26 @@
+{
+  "verified_at_utc": "2026-10-29T19:38:02Z",
+  "checks_passed": 9,
+  "checks": [
+    "Database runs the previously adopted image, whose gosu reports go1.27.2",
+    "API stopped after a pre-cutover write; writes paused for the backup",
+    "Logical backup restored in a separate check database with identical rows",
+    "Patched image runs on the same volume and its gosu reports go1.27.3",
+    "Every row is unchanged after the cutover",
+    "API accepts a post-cutover write on the patched database",
+    "Real rollback to the previous image keeps the post-cutover note, read through the API",
+    "Return to the patched image keeps every row, including the rollback-period state",
+    "Removing the two probe notes leaves exactly the original notes"
+  ],
+  "previous_image": "ghcr.io/tommmdl/docker-lab@sha256:8b6813ec76804698c33e4dac8f501ca8f641affcbd27cbc3b7dd6fdb02874fc3",
+  "patched_image": "ghcr.io/tommmdl/docker-lab@sha256:d99044c05eaac0efa5a3d7bab28ab14a60fe77018cc7c683d6495520ba7bfc4b",
+  "volume": "docker-lab_pgdata_alpine_v1",
+  "lab_notes_before": 0,
+  "lab_notes_after": 0,
+  "probe_notes_written_and_removed": 2,
+  "backup_sha256": "164dd4d47ad0e581214dce5dbbd8acf6aee5d8a6d6b8db09b9e926ed89a3b1a0",
+  "backup_content_published": false,
+  "rollback_includes_post_cutover_write": true,
+  "duration_seconds": 227.0,
+  "scope": "Local docker-lab Compose project. Same PostgreSQL 17.11/Alpine 3.24 base, so the image swap reuses the adopted volume; only gosu changed."
+}

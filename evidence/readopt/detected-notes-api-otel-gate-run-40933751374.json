@@ -1,0 +1,33 @@
+{
+  "decision": "block",
+  "policy": {
+    "version": 1,
+    "block_severities": [
+      "HIGH",
+      "CRITICAL"
+    ],
+    "include_unfixed": true,
+    "block_end_of_life_os": true,
+    "require_package_inventory": true
+  },
+  "artifact": "ghcr.io/tommmdl/docker-lab@sha256:e01c467c0987cc2d999778a4e9ee429bee1d6af4bcdef80e38ce620b95a0b8da",
+  "severity_counts": {
+    "UNKNOWN": 2,
+    "CRITICAL": 1
+  },
+  "finding_count": 3,
+  "blocking_count": 1,
+  "blocking_without_fix": 0,
+  "os_end_of_life": false,
+  "blocking_findings": [
+    {
+      "target": "Python",
+      "id": "GHSA-6q48-6c7w-9gw2",
+      "package": "certifi",
+      "installed": "2026.7.22",
+      "fixed": "2026.10.18",
+      "severity": "CRITICAL",
+      "status": "fixed"
+    }
+  ]
+}
