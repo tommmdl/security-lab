@@ -39,7 +39,7 @@ The API went from 173 to 164 findings; PostgreSQL went from 472 to 412. No findi
 
 The recorded local scan blocked the API for **48 HIGH occurrences** and PostgreSQL for **95 HIGH and 4 CRITICAL**. These are package/advisory occurrences, not necessarily distinct vulnerabilities: the blocking sets contain 12 and 49 distinct identifiers respectively.
 
-All **15 laboratory tests passed**, including one Dockerfile rejected by Trivy and an improved configuration accepted by it. This does not approve the images: tests and image gates have separate results. The complete workflow should remain red while target images violate the policy.
+All **15 laboratory tests passed**, including one Dockerfile rejected by Trivy and an improved configuration accepted by it. This does not approve the images: tests and image gates have separate results. Each target in `config/targets.json` declares its expected decision: adopted images must pass (`allow`) and the Debian images retained for recovery must stay blocked (`block`). A job fails when an adopted image is blocked, a retained image passes, or the report is invalid. The workflow stays green and keeps proving the block.
 
 See [results and verification scope](docs/validation.en.md) and [finding triage](docs/triage.en.md).
 
@@ -105,6 +105,7 @@ On code/config pushes to main, pull requests and manual runs, the workflow:
 2. Tests approval, blocking, invalid reports and both Dockerfile exercises.
 3. Scans API and database in separate jobs without fail-fast cancellation.
 4. Uploads JSON, SARIF and decisions even when an image is blocked.
+5. Compares each gate decision with the expected one for that image.
 
 Checkout and artifact actions are pinned by commit. The workflow token only reads repository contents. Gates do not use `continue-on-error`. This workflow neither publishes images nor changes the running application.
 

@@ -38,7 +38,7 @@ A API passou de 173 para 164 achados; o PostgreSQL, de 472 para 412. Não restar
 
 Na execução local registrada, a API foi bloqueada por **48 ocorrências HIGH**. O PostgreSQL foi bloqueado por **95 HIGH e 4 CRITICAL**. Essas contagens são ocorrências de pacote/CVE, não necessariamente vulnerabilidades distintas: os conjuntos bloqueados têm 12 e 49 identificadores distintos, respectivamente.
 
-Os **15 testes do laboratório passaram**, incluindo um Dockerfile que o Trivy rejeita e outro que passa na análise de configuração. Isso não aprova as imagens: o job de testes e os gates de imagem têm resultados separados. O workflow completo deve ficar vermelho enquanto as imagens violarem a política.
+Os **15 testes do laboratório passaram**, incluindo um Dockerfile que o Trivy rejeita e outro que passa na análise de configuração. Isso não aprova as imagens: o job de testes e os gates de imagem têm resultados separados. Cada alvo em `config/targets.json` declara a decisão esperada: as imagens adotadas precisam passar (`allow`) e as imagens Debian retidas para recuperação precisam continuar bloqueadas (`block`). O job falha se uma imagem adotada for bloqueada, se uma imagem retida passar ou se o relatório for inválido. Assim o workflow fica verde e continua provando o bloqueio.
 
 Veja os [resultados e o que foi testado](docs/validation.md) e a [triagem dos achados](docs/triage.md).
 
@@ -104,6 +104,7 @@ Em push de código/configuração para main, pull request e execução manual, o
 2. Testa aprovação, bloqueio, erro de relatório e os dois Dockerfiles de exercício.
 3. Analisa API e banco em jobs separados, sem cancelar um quando o outro falha.
 4. Guarda JSON, SARIF e a decisão mesmo quando há bloqueio.
+5. Compara a decisão do gate com a esperada para cada imagem.
 
 As actions de checkout e upload estão fixadas por commit. O token do workflow tem apenas leitura do conteúdo. Não há `continue-on-error` nos gates. O workflow não publica imagens e não altera a aplicação que já está rodando.
 

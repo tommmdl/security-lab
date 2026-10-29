@@ -48,7 +48,7 @@ jobs:
           persist-credentials: false
       - name: Instala a versão fixada do Trivy
         run: python3 scripts/prepare.py
-      - name: Analisa a imagem e aplica o bloqueio
+      - name: Analisa a imagem e confere a decisão esperada
         run: python3 scripts/scan.py "${{ matrix.target }}"
       - name: Guarda o relatório mesmo com bloqueio
         if: always()
